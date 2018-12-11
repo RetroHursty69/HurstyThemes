@@ -192,6 +192,7 @@ function gui_hurstythemes() {
         'RetroHursty69 XMenSweet'
         'RetroHursty69 YoshiSweet'
         'RetroHursty69 ZeldaSweet'
+        'RetroHursty69 WormsSweet'
     )
     while true; do
         local theme
