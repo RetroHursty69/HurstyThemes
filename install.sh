@@ -36,7 +36,7 @@ else
   echo "	<game>" >> /tmp/templist.xml
   echo "		<path>./hurstythemes.sh</path>" >> /tmp/templist.xml
   echo "		<name>Hursty's Themes</name>" >> /tmp/templist.xml
-  echo "		<desc>Install, uninstall, or update RetroHursty69's EmulationStation themes.</desc>" >> /tmp/templist.xml
+  echo "		<desc>Install, uninstall, or update RetroHursty69's EmulationStation themes. It also includes an ES bootup theme randomizer to automatically switch themes on bootup.</desc>" >> /tmp/templist.xml
   echo "		<image>./icons/hurstythemes.png</image>" >> /tmp/templist.xml
   echo "		<playcount>1</playcount>" >> /tmp/templist.xml
   echo "		<lastplayed></lastplayed>" >> /tmp/templist.xml
