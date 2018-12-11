@@ -9,6 +9,8 @@ Due to the number of themes I have made for Emulation Station, the built-in ES T
 
 I've also created a set of ES themes (the mini sweet themes) that highlight an individual game or game character.  These themes all have the word "Sweet" at the end of the name.  To make the most of the "Sweet" Themes experience, make sure you activate the ES Theme Randomizer script.
 
+The ES bootup randomizer script was created by David Marti for his Motion Blue Unified base image.
+
 Periodically, new themes are completed and you will need to run the script updater to download the newest version to see these additional themes.
 
 The instructions below will demonstrate how to install the script and have it show up in the RetroPie menu within Emulation Station.
