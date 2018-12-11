@@ -35,6 +35,32 @@ function uninstall_theme_hurstythemes() {
     fi
 }
 
+function disable_script() {
+dialog --infobox "...processing..." 3 20 ; sleep 2
+ifexist=`cat /opt/retropie/configs/all/autostart.sh |grep themerandom |wc -l`
+if [[ ${ifexist} > "0" ]]
+then
+  perl -pi -w -e 's/\/home\/pi\/scripts\/themerandom.sh/#\/home\/pi\/scripts\/themerandom.sh/g;' /opt/retropie/configs/all/autostart.sh
+fi
+sleep 2
+}
+
+function enable_script() {
+dialog --infobox "...processing..." 3 20 ; sleep 2
+ifexist=`cat /opt/retropie/configs/all/autostart.sh |grep themerandom |wc -l`
+if [[ ${ifexist} > "0" ]]
+then
+  perl -pi -w -e 's/#\/home\/pi\/scripts\/themerandom.sh/\/home\/pi\/scripts\/themerandom.sh/g;' /opt/retropie/configs/all/autostart.sh
+else
+  cp /opt/retropie/configs/all/autostart.sh /opt/retropie/configs/all/autostart.sh.bkp
+  echo "/home/pi/scripts/themerandom.sh" > /tmp/autostart.sh
+  cat /opt/retropie/configs/all/autostart.sh >> /tmp/autostart.sh
+  chmod 777 /tmp/autostart.sh
+  cp /tmp/autostart.sh /opt/retropie/configs/all
+fi
+sleep 2
+}
+
 function gui_hurstythemes() {
     local themes=(
         'RetroHursty69 AlienSweet'
@@ -223,6 +249,8 @@ function gui_hurstythemes() {
         local default
 
         options+=(U "Update install script - script will exit when updated")
+        options+=(E "Enable ES bootup theme randomizer")
+        options+=(D "Disable ES bootup theme randomizer")
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -255,6 +283,12 @@ function gui_hurstythemes() {
                 fi
                 chmod 777 "hurstythemes.sh" 
                 exit
+                ;;
+            E)  #enable ES bootup theme randomizer
+                enable_script
+                ;;
+            D)  #disable ES bootup theme randomizer
+                disable_script
                 ;;
             *)  #install or update themes
                 theme=(${themes[choice-1]})

@@ -5,6 +5,8 @@
 
 # These themes are to be used on a Raspberry Pi / RetroPie build
 
+# It also includes the Motion Blue Unified ES bootup themes randomizer script
+
 # Download repository
 
 rm -rf "/tmp/hursty"
@@ -16,6 +18,9 @@ git clone "https://github.com/RetroHursty69/HurstyThemes.git" "/tmp/hursty"
 cp /tmp/hursty/hurstythemes.sh /home/pi/RetroPie/retropiemenu
 chmod 777 /home/pi/RetroPie/retropiemenu/hurstythemes.sh
 cp /tmp/hursty/hurstythemes.png /home/pi/RetroPie/retropiemenu/icons
+mkdir /home/pi/scripts
+cp /tmp/hursty/themerandom.sh /home/pi/scripts
+chmod 777 /home/pi/scripts/themerandom.sh
 
 # Update RetroPie gamelist.xml to add new entry
 
