@@ -140,6 +140,7 @@ function gui_hurstythemes() {
         'RetroHursty69 KirbySweet'
         'RetroHursty69 KratosSweet'
         'RetroHursty69 LaraCroftSweet'
+        'RetroHursty69 LegoSweet'
         'RetroHursty69 LuigiSweet'
         'RetroHursty69 MOTUSweet'
         'RetroHursty69 MarioBrosSweet'
