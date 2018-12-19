@@ -37,9 +37,9 @@ function uninstall_theme_hurstythemes() {
 
 function disable_script() {
 if [[ -d "/home/pigaming" ]]; then
-    pipath = "pigaming"
+  pipath = "pigaming"
 else
-    pipath = "pi"
+  pipath = "pi"
 fi
 
 dialog --infobox "...processing..." 3 20 ; sleep 2
