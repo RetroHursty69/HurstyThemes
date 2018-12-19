@@ -36,16 +36,28 @@ function uninstall_theme_hurstythemes() {
 }
 
 function disable_script() {
+if [[ -d "/home/pigaming" ]]; then
+    pipath = "pigaming"
+else
+    pipath = "pi"
+fi
+
 dialog --infobox "...processing..." 3 20 ; sleep 2
 ifexist=`cat /opt/retropie/configs/all/autostart.sh |grep themerandom |wc -l`
 if [[ ${ifexist} > "0" ]]
 then
-  perl -pi -w -e 's/\/home\/pi\/scripts\/themerandom.sh/#\/home\/pi\/scripts\/themerandom.sh/g;' /opt/retropie/configs/all/autostart.sh
+  perl -pi -w -e 's/\/home\/$pipath\/scripts\/themerandom.sh/#\/home\/$pipath\/scripts\/themerandom.sh/g;' /opt/retropie/configs/all/autostart.sh
 fi
 sleep 2
 }
 
 function enable_script() {
+if [[ -d "/home/pigaming" ]]; then
+    pipath = "pigaming"
+else
+    pipath = "pi"
+fi
+
 dialog --infobox "...processing..." 3 20 ; sleep 2
 ifexist=`cat /opt/retropie/configs/all/autostart.sh |grep themerandom |wc -l`
 if [[ ${ifexist} > "0" ]]
@@ -53,7 +65,7 @@ then
   perl -pi -w -e 's/#\/home\/pi\/scripts\/themerandom.sh/\/home\/pi\/scripts\/themerandom.sh/g;' /opt/retropie/configs/all/autostart.sh
 else
   cp /opt/retropie/configs/all/autostart.sh /opt/retropie/configs/all/autostart.sh.bkp
-  echo "/home/pi/scripts/themerandom.sh" > /tmp/autostart.sh
+  echo "/home/$pipath/scripts/themerandom.sh" > /tmp/autostart.sh
   cat /opt/retropie/configs/all/autostart.sh >> /tmp/autostart.sh
   chmod 777 /tmp/autostart.sh
   cp /tmp/autostart.sh /opt/retropie/configs/all
@@ -352,11 +364,17 @@ function gui_hurstythemes() {
         [[ -z "$choice" ]] && break
         case "$choice" in
             U)  #update install script to get new theme listings
-                cd "/home/pi/RetroPie/retropiemenu" 
+                if [[ -d "/home/pigaming" ]]; then
+                  pipath = "pigaming"
+                else
+                  pipath = "pi"
+                fi
+                
+                cd "/home/$pipath/RetroPie/retropiemenu" 
                 mv "hurstythemes.sh" "hurstythemes.sh.bkp" 
                 wget "https://raw.githubusercontent.com/retrohursty69/HurstyThemes/master/hurstythemes.sh" 
-                if [[ -f "/home/pi/RetroPie/retropiemenu/hurstythemes.sh" ]]; then
-                  echo "/home/pi/RetroPie/retropiemenu/hurstythemes.sh" > /tmp/errorchecking
+                if [[ -f "/home/$pipath/RetroPie/retropiemenu/hurstythemes.sh" ]]; then
+                  echo "/home/$pipath/RetroPie/retropiemenu/hurstythemes.sh" > /tmp/errorchecking
                  else
                   mv "hurstythemes.sh.bkp" "hurstythemes.sh"
                 fi
