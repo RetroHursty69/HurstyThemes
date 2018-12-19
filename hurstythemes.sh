@@ -140,6 +140,7 @@ function gui_hurstythemes() {
         'RetroHursty69 HalloweenSweet'
         'RetroHursty69 HarryPotterSweet'
         'RetroHursty69 HarvestMoonSweet'
+        'RetroHursty69 HelloKittySweet'
         'RetroHursty69 HitmanSweet'
         'RetroHursty69 HulkSweet'
         'RetroHursty69 IncrediblesSweet'
