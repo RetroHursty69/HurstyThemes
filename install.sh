@@ -15,11 +15,11 @@ git clone "https://github.com/RetroHursty69/HurstyThemes.git" "/tmp/hursty"
 
 # Move files to proper directory
 
-cp /tmp/hursty/hurstythemes.sh /home/pi/RetroPie/retropiemenu
+cp /tmp/hursty/hurstythemes.sh /home/pi/RetroPie/retropiemenu/
 chmod 777 /home/pi/RetroPie/retropiemenu/hurstythemes.sh
-cp /tmp/hursty/hurstythemes.png /home/pi/RetroPie/retropiemenu/icons
+cp /tmp/hursty/hurstythemes.png /home/pi/RetroPie/retropiemenu/icons/
 mkdir /home/pi/scripts
-cp /tmp/hursty/themerandom.sh /home/pi/scripts
+cp /tmp/hursty/themerandom.sh /home/pi/scripts/
 chmod 777 /home/pi/scripts/themerandom.sh
 
 # Update RetroPie gamelist.xml to add new entry
