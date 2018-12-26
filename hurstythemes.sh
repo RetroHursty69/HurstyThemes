@@ -248,6 +248,8 @@ function gui_hurstythemes() {
         'RetroHursty69 TonyHawkSweet'
         'RetroHursty69 TotalRecallSweet'
         'RetroHursty69 ToyStorySweet'
+        'RetroHursty69 TronSweet'
+        'RetroHursty69 TronLegacySweet'
         'RetroHursty69 TwistedMetalSweet'
         'RetroHursty69 UnchartedSweet'
         'RetroHursty69 ViewtifulJoeSweet'
