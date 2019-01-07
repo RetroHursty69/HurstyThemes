@@ -275,6 +275,7 @@ function gui_hurstythemes() {
         'RetroHursty69 cabsnazzy'
         'RetroHursty69 cardcrazy'
         'RetroHursty69 comiccrazy'
+        'RetroHursty69 corg'
         'RetroHursty69 crisp'
         'RetroHursty69 crisp_light'
         'RetroHursty69 cyber'
