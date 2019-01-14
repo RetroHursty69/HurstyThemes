@@ -314,6 +314,7 @@ function gui_hurstythemes() {
         'RetroHursty69 NegativeColor'
         'RetroHursty69 NegativeSepia'
         'RetroHursty69 neogeo_only'
+        'RetroHursty69 orbpilot'
         'RetroHursty69 pacman'
         'RetroHursty69 pitube'
         'RetroHursty69 primo'
