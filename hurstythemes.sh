@@ -327,6 +327,7 @@ function gui_hurstythemes() {
         'RetroHursty69 heman'
         'RetroHursty69 heychromey'
         'RetroHursty69 homerism'
+        'RetroHursty69 hurstybluetake2'
         'RetroHursty69 hurstyspin'
         'RetroHursty69 incredibles'
         'RetroHursty69 infinity'
