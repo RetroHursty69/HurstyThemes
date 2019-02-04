@@ -310,6 +310,7 @@ function gui_hurstythemes() {
         'RetroHursty69 boxcity'
         'RetroHursty69 cabsnazzy'
         'RetroHursty69 cardcrazy'
+        'RetroHursty69 circuit'
         'RetroHursty69 comiccrazy'
         'RetroHursty69 corg'
         'RetroHursty69 crisp'
