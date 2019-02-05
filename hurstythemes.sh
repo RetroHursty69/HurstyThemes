@@ -350,6 +350,7 @@ function gui_hurstythemes() {
         'RetroHursty69 primo'
         'RetroHursty69 primo_light'
         'RetroHursty69 retroboy'
+        'RetroHursty69 retroboy2'
         'RetroHursty69 retrogamenews'
         'RetroHursty69 retroroid'
         'RetroHursty69 snapback'
