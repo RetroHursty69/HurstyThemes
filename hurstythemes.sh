@@ -304,6 +304,7 @@ function gui_hurstythemes() {
         'RetroHursty69 ZombiesAteSweet'
         'RetroHursty69 back2basics'
         'RetroHursty69 batmanburton'
+        'RetroHursty69 bitfit'
         'RetroHursty69 bluray'
         'RetroHursty69 boxalloyblue'
         'RetroHursty69 boxalloyred'
