@@ -322,6 +322,7 @@ function gui_hurstythemes() {
         'RetroHursty69 donkeykonkey'
         'RetroHursty69 dragonballz'
         'RetroHursty69 evilresident'
+        'RetroHursty69 fabuloso'
         'RetroHursty69 garfieldism'
         'RetroHursty69 graffiti'
         'RetroHursty69 greenilicious'
