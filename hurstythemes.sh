@@ -362,6 +362,7 @@ function gui_hurstythemes() {
         'RetroHursty69 stirling'
         'RetroHursty69 sublime'
         'RetroHursty69 supersweet'
+        'RetroHursty69 supersweet_aspectratio54'
         'RetroHursty69 tmnt'
         'RetroHursty69 tributeGoT'
         'RetroHursty69 tributeSTrek'
