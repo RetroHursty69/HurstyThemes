@@ -302,6 +302,7 @@ function gui_hurstythemes() {
         'RetroHursty69 YuGiOhSweet'
         'RetroHursty69 ZeldaSweet'
         'RetroHursty69 ZombiesAteSweet'
+        'RetroHursty69 arcade1up_aspectratio54'
         'RetroHursty69 back2basics'
         'RetroHursty69 batmanburton'
         'RetroHursty69 bitfit'
