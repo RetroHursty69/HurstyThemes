@@ -379,7 +379,7 @@ function gui_hurstythemes() {
         'RetroHursty69 BanjoCool'
         'RetroHursty69 BatmanCool'
 	'RetroHursty69 BayonettaCool'
-        'RetroHrsty69 BombermanCool'
+        'RetroHursty69 BombermanCool'
 	'RetroHursty69 BowserCool'
         'RetroHursty69 BubbleBobbleCool'
 	'RetroHursty69 BubsyCool'
