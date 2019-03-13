@@ -340,6 +340,7 @@ function gui_hurstythemes() {
         'RetroHursty69 license2game'
         'RetroHursty69 lightswitch'
         'RetroHursty69 magazinemadness'
+	'RetroHursty69 mariobrosiii'
         'RetroHursty69 mario_melee'
         'RetroHursty69 merryxmas'
         'RetroHursty69 minecraft'
