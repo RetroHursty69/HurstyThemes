@@ -371,6 +371,7 @@ function gui_hurstythemes() {
         'RetroHursty69 tributeSTrek'
         'RetroHursty69 tributeSWars'
         'RetroHursty69 vertical_arcade'
+	'RetroHursty69 vertical_limit_verticaltheme'
         'RetroHursty69 whiteslide'
         'RetroHursty69 whitewood'
         'RetroHursty69 AladdinCool'
