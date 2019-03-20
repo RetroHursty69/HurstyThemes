@@ -544,6 +544,7 @@ function gui_hurstythemes() {
 	'RetroHursty69 RachetClankSpin'	
 	'RetroHursty69 RaymanSpin'
 	'RetroHursty69 RetroArenaSpin'
+	'RetroHursty69 RetroPieSpin'
 	'RetroHursty69 RoboCopSpin'
 	'RetroHursty69 SimpsonsSpin'
 	'RetroHursty69 SimsSpin'
