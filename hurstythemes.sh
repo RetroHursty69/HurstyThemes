@@ -519,6 +519,19 @@ function gui_hurstythemes() {
 	'RetroHursty69 IndianaJonesSpin'
 	'RetroHursty69 JetSetRadioSpin'
 	'RetroHursty69 KillerInstinctSpin'
+	'RetroHursty69 StreetFighterSpin'
+	'RetroHursty69 StreetsOfRageSpin'
+	'RetroHursty69 TekkenSpin'
+	'RetroHursty69 TerminatorSpin'
+	'RetroHursty69 TMNTSpin'
+	'RetroHursty69 ToadSpin'
+	'RetroHursty69 ToyStorySpin'
+	'RetroHursty69 WarioSpin'
+	'RetroHursty69 WormsSpin'
+	'RetroHursty69 WrestlingSpin'
+	'RetroHursty69 XMenSpin'
+	'RetroHursty69 YoshiSpin'
+	'RetroHursty69 ZeldaSpin'
     )
     while true; do
         local theme
