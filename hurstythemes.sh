@@ -62,6 +62,106 @@ sleep 2
 }
 
 function gui_hurstythemes() {
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        options+=(U "Update install script - script will exit when updated")
+        options+=(E "Enable ES bootup theme randomizer")
+        options+=(D "Disable ES bootup theme randomizer")
+        options+=(F "Mini Sweet Themes Manager")
+        options+=(G "Cool Themes Manager")
+        options+=(H "Spin Themes Manager")
+        options+=(I "16:9 Aspect Themes Manager")
+        options+=(J "5:4 Aspect Themes Manager")
+        options+=(K "Vertical Aspect Themes Manager")
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            U)  #update install script to get new theme listings
+                cd "/home/pi/RetroPie/retropiemenu" 
+                mv "hurstythemes.sh" "hurstythemes.sh.bkp" 
+                wget "https://raw.githubusercontent.com/retrohursty69/HurstyThemes/master/hurstythemes.sh" 
+                if [[ -f "/home/pi/RetroPie/retropiemenu/hurstythemes.sh" ]]; then
+                  echo "/home/pi/RetroPie/retropiemenu/hurstythemes.sh" > /tmp/errorchecking
+                 else
+                  mv "hurstythemes.sh.bkp" "hurstythemes.sh"
+                fi
+                chmod 777 "hurstythemes.sh" 
+                exit
+                ;;
+            E)  #enable ES bootup theme randomizer
+                enable_script
+                ;;
+            D)  #disable ES bootup theme randomizer
+                disable_script
+                ;;
+            F)  #mini sweet themes only
+                sweet_themes
+                ;;
+            G)  #cool themes only
+                cool_themes
+                ;;
+            H)  #spin themes only
+                spin_themes
+                ;;
+            I)  #16:9 themes only
+                16x9_themes
+                ;;
+            J)  #4:3 themes only
+                5x4_themes
+                ;;
+            K)  #vertical themes only
+                vertical_themes
+                ;;
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done
+}
+
+function sweet_themes() {
     local themes=(
         'RetroHursty69 300Sweet'
         'RetroHursty69 AdventureTimeSweet'
@@ -302,78 +402,62 @@ function gui_hurstythemes() {
         'RetroHursty69 YuGiOhSweet'
         'RetroHursty69 ZeldaSweet'
         'RetroHursty69 ZombiesAteSweet'
-        'RetroHursty69 arcade1up_aspectratio54'
-        'RetroHursty69 back2basics'
-        'RetroHursty69 batmanburton'
-        'RetroHursty69 bitfit'
-        'RetroHursty69 bluray'
-        'RetroHursty69 boxalloyblue'
-        'RetroHursty69 boxalloyred'
-        'RetroHursty69 boxcity'
-        'RetroHursty69 cabsnazzy'
-        'RetroHursty69 cardcrazy'
-        'RetroHursty69 circuit'
-        'RetroHursty69 comiccrazy'
-        'RetroHursty69 corg'
-        'RetroHursty69 crisp'
-        'RetroHursty69 crisp_light'
-        'RetroHursty69 cyber'
-        'RetroHursty69 darkswitch'
-        'RetroHursty69 disenchantment'
-        'RetroHursty69 donkeykonkey'
-        'RetroHursty69 dragonballz'
-        'RetroHursty69 evilresident'
-        'RetroHursty69 fabuloso'
-        'RetroHursty69 garfieldism'
-        'RetroHursty69 graffiti'
-        'RetroHursty69 greenilicious'
-        'RetroHursty69 halloweenspecial'
-        'RetroHursty69 heman'
-        'RetroHursty69 heychromey'
-        'RetroHursty69 heychromey_aspectratio54'
-        'RetroHursty69 homerism'
-        'RetroHursty69 hurstybluetake2'
-        'RetroHursty69 hurstyspin'
-        'RetroHursty69 incredibles'
-        'RetroHursty69 infinity'
-        'RetroHursty69 joysticks'
-        'RetroHursty69 license2game'
-        'RetroHursty69 lightswitch'
-        'RetroHursty69 magazinemadness'
-	'RetroHursty69 mariobrosiii'
-        'RetroHursty69 mario_melee'
-        'RetroHursty69 merryxmas'
-        'RetroHursty69 minecraft'
-        'RetroHursty69 minions'
-        'RetroHursty69 mysticorb'
-        'RetroHursty69 NegativeColor'
-        'RetroHursty69 NegativeSepia'
-        'RetroHursty69 neogeo_only'
-        'RetroHursty69 orbpilot'
-        'RetroHursty69 pacman'
-        'RetroHursty69 pitube'
-        'RetroHursty69 primo'
-        'RetroHursty69 primo_light'
-        'RetroHursty69 retroboy'
-        'RetroHursty69 retroboy2'
-        'RetroHursty69 retrogamenews'
-        'RetroHursty69 retroroid'
-        'RetroHursty69 snapback'
-        'RetroHursty69 snazzy'
-        'RetroHursty69 soda'
-        'RetroHursty69 spaceinvaders'
-        'RetroHursty69 stirling'
-        'RetroHursty69 sublime'
-        'RetroHursty69 supersweet'
-        'RetroHursty69 supersweet_aspectratio54'
-        'RetroHursty69 tmnt'
-        'RetroHursty69 tributeGoT'
-        'RetroHursty69 tributeSTrek'
-        'RetroHursty69 tributeSWars'
-        'RetroHursty69 vertical_arcade'
-	'RetroHursty69 vertical_limit_verticaltheme'
-        'RetroHursty69 whiteslide'
-        'RetroHursty69 whitewood'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done
+}
+
+function cool_themes() {
+    local themes=(
         'RetroHursty69 AladdinCool'
         'RetroHursty69 AnimalCrossingCool'
 	'RetroHursty69 ArmyMenCool'
@@ -494,6 +578,62 @@ function gui_hurstythemes() {
         'RetroHursty69 YoshiCool'
 	'RetroHursty69 YuGiOhCool'
         'RetroHursty69 ZeldaCool'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done
+}
+
+function spin_themes() {
+    local themes=(
 	'RetroHursty69 BatmanSpin'
 	'RetroHursty69 BombermanSpin'
 	'RetroHursty69 BowserSpin'
@@ -544,7 +684,6 @@ function gui_hurstythemes() {
 	'RetroHursty69 RachetClankSpin'	
 	'RetroHursty69 RaymanSpin'
 	'RetroHursty69 RetroArenaSpin'
-	'RetroHursty69 RetroPieSpin'
 	'RetroHursty69 RoboCopSpin'
 	'RetroHursty69 SimpsonsSpin'
 	'RetroHursty69 SimsSpin'
@@ -581,9 +720,128 @@ function gui_hurstythemes() {
         local status=()
         local default
 
-        options+=(U "Update install script - script will exit when updated")
-        options+=(E "Enable ES bootup theme randomizer")
-        options+=(D "Disable ES bootup theme randomizer")
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done
+}
+
+function 16x9_themes() {
+    local themes=(
+        'RetroHursty69 back2basics'
+        'RetroHursty69 batmanburton'
+        'RetroHursty69 bitfit'
+        'RetroHursty69 bluray'
+        'RetroHursty69 boxalloyblue'
+        'RetroHursty69 boxalloyred'
+        'RetroHursty69 boxcity'
+        'RetroHursty69 cabsnazzy'
+        'RetroHursty69 cardcrazy'
+        'RetroHursty69 circuit'
+        'RetroHursty69 comiccrazy'
+        'RetroHursty69 corg'
+        'RetroHursty69 crisp'
+        'RetroHursty69 crisp_light'
+        'RetroHursty69 cyber'
+        'RetroHursty69 darkswitch'
+        'RetroHursty69 disenchantment'
+        'RetroHursty69 donkeykonkey'
+        'RetroHursty69 dragonballz'
+        'RetroHursty69 evilresident'
+        'RetroHursty69 fabuloso'
+        'RetroHursty69 garfieldism'
+        'RetroHursty69 graffiti'
+        'RetroHursty69 greenilicious'
+        'RetroHursty69 halloweenspecial'
+        'RetroHursty69 heman'
+        'RetroHursty69 heychromey'
+        'RetroHursty69 homerism'
+        'RetroHursty69 hurstybluetake2'
+        'RetroHursty69 hurstyspin'
+        'RetroHursty69 incredibles'
+        'RetroHursty69 infinity'
+        'RetroHursty69 joysticks'
+        'RetroHursty69 license2game'
+        'RetroHursty69 lightswitch'
+        'RetroHursty69 magazinemadness'
+	'RetroHursty69 mariobrosiii'
+        'RetroHursty69 mario_melee'
+        'RetroHursty69 merryxmas'
+        'RetroHursty69 minecraft'
+        'RetroHursty69 minions'
+        'RetroHursty69 mysticorb'
+        'RetroHursty69 NegativeColor'
+        'RetroHursty69 NegativeSepia'
+        'RetroHursty69 neogeo_only'
+        'RetroHursty69 orbpilot'
+        'RetroHursty69 pacman'
+        'RetroHursty69 pitube'
+        'RetroHursty69 primo'
+        'RetroHursty69 primo_light'
+        'RetroHursty69 retroboy'
+        'RetroHursty69 retroboy2'
+        'RetroHursty69 retrogamenews'
+        'RetroHursty69 retroroid'
+        'RetroHursty69 snapback'
+        'RetroHursty69 snazzy'
+        'RetroHursty69 soda'
+        'RetroHursty69 spaceinvaders'
+        'RetroHursty69 stirling'
+        'RetroHursty69 sublime'
+        'RetroHursty69 supersweet'
+        'RetroHursty69 tmnt'
+        'RetroHursty69 tributeGoT'
+        'RetroHursty69 tributeSTrek'
+        'RetroHursty69 tributeSWars'
+        'RetroHursty69 whiteslide'
+        'RetroHursty69 whitewood'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -605,24 +863,123 @@ function gui_hurstythemes() {
         default="$choice"
         [[ -z "$choice" ]] && break
         case "$choice" in
-            U)  #update install script to get new theme listings
-                cd "/home/pi/RetroPie/retropiemenu" 
-                mv "hurstythemes.sh" "hurstythemes.sh.bkp" 
-                wget "https://raw.githubusercontent.com/retrohursty69/HurstyThemes/master/hurstythemes.sh" 
-                if [[ -f "/home/pi/RetroPie/retropiemenu/hurstythemes.sh" ]]; then
-                  echo "/home/pi/RetroPie/retropiemenu/hurstythemes.sh" > /tmp/errorchecking
-                 else
-                  mv "hurstythemes.sh.bkp" "hurstythemes.sh"
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
                 fi
-                chmod 777 "hurstythemes.sh" 
-                exit
                 ;;
-            E)  #enable ES bootup theme randomizer
-                enable_script
+        esac
+    done
+}
+
+function 5x4_themes() {
+    local themes=(
+        'RetroHursty69 arcade1up_aspectratio54'
+        'RetroHursty69 heychromey_aspectratio54'
+        'RetroHursty69 supersweet_aspectratio54'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
                 ;;
-            D)  #disable ES bootup theme randomizer
-                disable_script
-                ;;
+        esac
+    done
+}
+
+function vertical_themes() {
+    local themes=(
+        'RetroHursty69 vertical_arcade'
+	'RetroHursty69 vertical_limit_verticaltheme'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
             *)  #install or update themes
                 theme=(${themes[choice-1]})
                 repo="${theme[0]}"
