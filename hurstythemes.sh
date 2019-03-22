@@ -634,6 +634,11 @@ function cool_themes() {
 
 function spin_themes() {
     local themes=(
+	'RetroHursty69 AdventureTimeSpin'
+	'RetroHursty69 AkumaSpin'
+	'RetroHursty69 AladdinSpin'
+	'RetroHursty69 AlexKiddSpin'
+	'RetroHursty69 AlvinSpin'
 	'RetroHursty69 BatmanSpin'
 	'RetroHursty69 BombermanSpin'
 	'RetroHursty69 BowserSpin'
