@@ -643,6 +643,7 @@ function spin_themes() {
 	'RetroHursty69 AngryBirdsSpin'
 	'RetroHursty69 AntManSpin'
 	'RetroHursty69 AquamanSpin'
+	'RetroHursty69 ArcadePunksSpin'
 	'RetroHursty69 ArthurSpin'
 	'RetroHursty69 AstroBoySpin'
 	'RetroHursty69 BatmanSpin'
