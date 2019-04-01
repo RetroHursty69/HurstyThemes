@@ -82,6 +82,7 @@ function gui_hurstythemes() {
         options+=(L "Chromey Blue Themes Manager")
         options+=(M "Chromey Green Themes Manager")
         options+=(N "Chromey Neon Themes Manager")
+        options+=(O "Hursty's Picks Themes Manager")
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -147,6 +148,9 @@ function gui_hurstythemes() {
                 ;;
             N)  #chromey neon themes only
                 chromeyneon_themes
+                ;;
+            O)  #hursty's picks
+                hurstypicks_themes
                 ;;
             *)  #install or update themes
                 theme=(${themes[choice-1]})
@@ -1677,5 +1681,79 @@ function chromeyneon_themes() {
     done
 }
 
+function hurstypicks_themes() {
+    local themes=(
+        'RetroHursty69 bluray'
+        'RetroHursty69 boxalloyblue'
+        'RetroHursty69 boxalloyred'
+        'RetroHursty69 cardcrazy'
+        'RetroHursty69 circuit'
+        'RetroHursty69 corg'
+        'RetroHursty69 fabuloso'
+        'RetroHursty69 greenilicious'
+        'RetroHursty69 heychromey'
+        'RetroHursty69 hurstybluetake2'
+        'RetroHursty69 lightswitch'
+        'RetroHursty69 magazinemadness'
+	'RetroHursty69 mariobrosiii'
+        'RetroHursty69 retroroid'
+        'RetroHursty69 soda'
+        'RetroHursty69 spaceinvaders'
+        'RetroHursty69 stirling'
+        'RetroHursty69 supersweet'
+        'RetroHursty69 whiteslide'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done
+}
 
 gui_hurstythemes
