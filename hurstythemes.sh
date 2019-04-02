@@ -1699,7 +1699,6 @@ function hurstypicks_themes() {
 	'RetroHursty69 mariobrosiii'
         'RetroHursty69 retroroid'
         'RetroHursty69 soda'
-        'RetroHursty69 spaceinvaders'
         'RetroHursty69 stirling'
         'RetroHursty69 supersweet'
         'RetroHursty69 whiteslide'
