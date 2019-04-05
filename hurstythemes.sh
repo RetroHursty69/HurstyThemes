@@ -575,6 +575,7 @@ function cool_themes() {
         'RetroHursty69 StarTrekCool'
         'RetroHursty69 StreetFighterCool'
         'RetroHursty69 StreetsOfRageCool'
+	'RetroHursty69 SubScorpionCool'
 	'RetroHursty69 SupermanCool'
         'RetroHursty69 TekkenCool'
         'RetroHursty69 TMNTCool'
