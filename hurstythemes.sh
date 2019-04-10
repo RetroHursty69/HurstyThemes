@@ -773,6 +773,7 @@ function spin_themes() {
     	'RetroHursty69 RaidenSpin'	
 	'RetroHursty69 RaymanSpin'
 	'RetroHursty69 RetroArenaSpin'
+	'RetroHursty69 ReaperSpin'
 	'RetroHursty69 RoboCopSpin'
 	'RetroHursty69 RogueSpin'
 	'RetroHursty69 RyuSpin'
