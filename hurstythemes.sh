@@ -1765,12 +1765,13 @@ function hurstypicks_themes() {
 function handheld_themes() {
     local themes=(
         'RetroHursty69 BlurayGameHat'
-		'RetroHursty69 CarbonGameHat'
-		'RetroHursty69 CardCrazyGameHat'
-		'RetroHursty69 ChromeyGameHat'
-		'RetroHursty69 MagazineMadnessGameHat'
-		'RetroHursty69 SodaGameHat'
-		'RetroHursty69 SweetBlueGameHat'
+	'RetroHursty69 CarbonGameHat'
+	'RetroHursty69 CardCrazyGameHat'
+	'RetroHursty69 ChromeyGameHat'
+	'RetroHursty69 CircuitGameHat'
+	'RetroHursty69 MagazineMadnessGameHat'
+	'RetroHursty69 SodaGameHat'
+	'RetroHursty69 SweetBlueGameHat'
     )
     while true; do
         local theme
