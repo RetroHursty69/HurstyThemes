@@ -1770,7 +1770,10 @@ function handheld_themes() {
 	'RetroHursty69 ChromeyGameHat'
 	'RetroHursty69 CircuitGameHat'
 	'RetroHursty69 MagazineMadnessGameHat'
+	'RetroHursty69 NegativeGameHat'
+	'RetroHursty69 RetroroidGameHat'
 	'RetroHursty69 SodaGameHat'
+	'RetroHursty69 SublimeGameHat'
 	'RetroHursty69 SweetBlueGameHat'
     )
     while true; do
