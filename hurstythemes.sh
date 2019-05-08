@@ -892,6 +892,8 @@ function 16x9_themes() {
         'RetroHursty69 boxcity'
         'RetroHursty69 cabsnazzy'
 	'RetroHursty69 CapcomColorHorizontal'
+	'RetroHursty69 CapcomColorSpin'
+	'RetroHursty69 CapcomColorVertical'
         'RetroHursty69 cardcrazy'
         'RetroHursty69 circuit'
         'RetroHursty69 comiccrazy'
