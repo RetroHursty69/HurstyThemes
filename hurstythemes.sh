@@ -526,7 +526,7 @@ function cool_themes() {
 	'RetroHursty69 InspectorGadgetCool'
         'RetroHursty69 JetSetRadioCool'
         'RetroHursty69 KillerInstinctCool'
-        'RetroHursty69 KindomHeartsCool'
+        'RetroHursty69 KingdomHeartsCool'
         'RetroHursty69 KirbyCool'
         'RetroHursty69 KOFCool'
         'RetroHursty69 LegoCool'
