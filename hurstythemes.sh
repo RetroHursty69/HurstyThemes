@@ -912,6 +912,7 @@ function 16x9_themes() {
         'RetroHursty69 fabuloso'
 	'RetroHursty69 floyd'
 	'RetroHursty69 floyd_arcade'
+	'RetroHursty69 floyd_room'
         'RetroHursty69 garfieldism'
         'RetroHursty69 graffiti'
         'RetroHursty69 greenilicious'
