@@ -83,7 +83,8 @@ function gui_hurstythemes() {
         options+=(M "Chromey Green Themes Manager")
         options+=(N "Chromey Neon Themes Manager")
         options+=(O "Hursty's Picks Themes Manager")
-		options+=(P "Handheld (3:2, 4:3) Themes Manager")		
+		options+=(P "Handheld (3:2, 4:3) Themes Manager")
+		options+=(Q "Slick Themes Manager")		
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -155,6 +156,9 @@ function gui_hurstythemes() {
                 ;;
             P)  #handheld themes
                 handheld_themes
+                ;;
+            Q)  #slick themes
+                slick_themes
                 ;;				
             *)  #install or update themes
                 theme=(${themes[choice-1]})
@@ -1706,14 +1710,15 @@ function hurstypicks_themes() {
         'RetroHursty69 circuit'
         'RetroHursty69 corg'
         'RetroHursty69 fabuloso'
-	'RetroHursty69 floyd'
+		'RetroHursty69 floyd'
         'RetroHursty69 greenilicious'
         'RetroHursty69 heychromey'
         'RetroHursty69 hurstybluetake2'
         'RetroHursty69 lightswitch'
         'RetroHursty69 magazinemadness'
-	'RetroHursty69 mariobrosiii'
+		'RetroHursty69 mariobrosiii'
         'RetroHursty69 retroroid'
+        'RetroHursty69 Slick_Red'		
         'RetroHursty69 soda'
         'RetroHursty69 stirling'
         'RetroHursty69 supersweet'
@@ -1774,7 +1779,7 @@ function hurstypicks_themes() {
 
 function handheld_themes() {
     local themes=(
-        'RetroHursty69 BlurayGameHat'
+    'RetroHursty69 BlurayGameHat'
 	'RetroHursty69 CarbonGameHat'
 	'RetroHursty69 CardCrazyGameHat'
 	'RetroHursty69 ChromeyGameHat'
@@ -1836,7 +1841,76 @@ function handheld_themes() {
                 fi
                 ;;
         esac
+    done	
+}
+function slick_themes() {
+    local themes=(
+        'RetroHursty69 Slick_Blue'
+        'RetroHursty69 Slick_Bluey'
+        'RetroHursty69 Slick_Brick'
+        'RetroHursty69 Slick_Castle'
+        'RetroHursty69 Slick_CheckerPlate'
+        'RetroHursty69 Slick_CityHeights'
+        'RetroHursty69 Slick_CityLights'
+        'RetroHursty69 Slick_Green'
+        'RetroHursty69 Slick_Lime'
+        'RetroHursty69 Slick_Orange'
+        'RetroHursty69 Slick_Red'
+        'RetroHursty69 Slick_Steel'
+        'RetroHursty69 Slick_Swingin'
+        'RetroHursty69 Slick_Swish'
+        'RetroHursty69 Slick_Tech'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
     done
 }
-
 gui_hurstythemes
