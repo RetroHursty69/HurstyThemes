@@ -1872,6 +1872,7 @@ function slick_themes() {
 	'RetroHursty69 Slick_Spinny'
         'RetroHursty69 Slick_Steel'
 	'RetroHursty69 Slick_Sunset'
+	'RetroHursty69 Slick_Swingin'
         'RetroHursty69 Slick_Swish'
         'RetroHursty69 Slick_Tech'
     )
