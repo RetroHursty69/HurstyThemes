@@ -1,6 +1,13 @@
+###################################
+# Location of file in RetroPie    #
+#                                 #
+# /home/pi/scripts/themerandom.sh #
+#                                 #
+###################################
 
 # Get list of currently installed themes and count
 ls /etc/emulationstation/themes > /tmp/themes
+mkdir -p -- "/opt/retropie/configs/all/emulationstation/themes"
 ls /opt/retropie/configs/all/emulationstation/themes >> /tmp/themes
 themecount=`cat /tmp/themes |wc -l`
 
@@ -15,4 +22,3 @@ newtheme=`sed -n "${r}p" /tmp/themes`
 
 # Replace the current used theme with a new one
 perl -pi -w -e 's/<string name=\"ThemeSet\" value=\"'${curtheme}'\" \/>/<string name=\"ThemeSet\" value=\"'${newtheme}'\" \/>/g;' /opt/retropie/configs/all/emulationstation/es_settings.cfg
-
