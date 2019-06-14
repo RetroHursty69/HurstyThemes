@@ -73,20 +73,18 @@ function gui_hurstythemes() {
         options+=(U "Update install script - script will exit when updated")
         options+=(E "Enable ES bootup theme randomizer")
         options+=(D "Disable ES bootup theme randomizer")
-        options+=(F "Mini Sweet Themes Manager (239 Themes)")
-        options+=(G "Cool Themes Manager (121 Themes)")
-        options+=(H "Spin Themes Manager (172 Themes)")
-        options+=(I "16:9 Aspect Themes Manager (78 Themes)")
-        options+=(J "5:4 Aspect Themes Manager (3 Themes)")
-        options+=(K "Vertical Aspect Themes Manager (2 Themes)")
-        options+=(L "Chromey Blue Themes Manager (133 Themes)")
-        options+=(M "Chromey Green Themes Manager (133 Themes)")
-        options+=(N "Chromey Neon Themes Manager (133 Themes)")
-        options+=(O "Hursty's Picks Themes Manager (22 Themes)")
-		options+=(P "Handheld (3:2, 4:3) Themes Manager (11 Themes)")
-		options+=(Q "Slick Themes Manager (29 Themes)")
-		options+=(R "Hyper Themes Manager (177 Themes)")
-		options+=(S "Mario Themes Manager (22 Themes)")		
+        options+=(F "Mini Sweet Themes Manager")
+        options+=(G "Cool Themes Manager")
+        options+=(H "Spin Themes Manager")
+        options+=(I "16:9 Aspect Themes Manager")
+        options+=(J "5:4 Aspect Themes Manager")
+        options+=(K "Vertical Aspect Themes Manager")
+        options+=(L "Chromey Blue Themes Manager")
+        options+=(M "Chromey Green Themes Manager")
+        options+=(N "Chromey Neon Themes Manager")
+        options+=(O "Hursty's Picks Themes Manager")
+		options+=(P "Handheld (3:2, 4:3) Themes Manager")
+		options+=(Q "Slick Themes Manager")		
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -103,7 +101,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1231 Themes as at 14 June 2019)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -161,12 +159,6 @@ function gui_hurstythemes() {
                 ;;
             Q)  #slick themes
                 slick_themes
-                ;;
-            R)  #hyper themes
-                hyper_themes
-                ;;
-            S)  #mario themes
-                mario_themes
                 ;;				
             *)  #install or update themes
                 theme=(${themes[choice-1]})
@@ -1725,12 +1717,10 @@ function hurstypicks_themes() {
         'RetroHursty69 heychromey'
         'RetroHursty69 hurstybluetake2'
         'RetroHursty69 lightswitch'
-        'RetroHursty69 HyperLuigi'
-        'RetroHursty69 HyperMario'		
         'RetroHursty69 magazinemadness'
 		'RetroHursty69 mariobrosiii'
         'RetroHursty69 retroroid'
-        'RetroHursty69 Slick_Red'
+        'RetroHursty69 Slick_Red'		
         'RetroHursty69 soda'
         'RetroHursty69 stirling'
         'RetroHursty69 supersweet'
@@ -1940,316 +1930,4 @@ function slick_themes() {
         esac
     done
 }
-
-function hyper_themes() {
-    local themes=(
-        'RetroHursty69 HyperAladdin'
-		'RetroHursty69 HyperAlexKidd'
-		'RetroHursty69 HyperAmigo'		
-        'RetroHursty69 HyperAngryBirds'
-        'RetroHursty69 HyperAnimalCrossing'
-        'RetroHursty69 HyperAntMan'
-		'RetroHursty69 HyperAstaroth'		
-        'RetroHursty69 HyperBanjo'
-        'RetroHursty69 HyperBatman'
-        'RetroHursty69 HyperBayonetta'
-		'RetroHursty69 HyperBenGrimm'		
-        'RetroHursty69 HyperBomberman'
-        'RetroHursty69 HyperBubbleBobble'
-		'RetroHursty69 HyperBubsy'
-		'RetroHursty69 HyperC3PO'		
-        'RetroHursty69 HyperCaptainAmerica'
-        'RetroHursty69 HyperCastlevania'
-		'RetroHursty69 HyperChewbacca'		
-		'RetroHursty69 HyperChunLi'
-        'RetroHursty69 HyperContra'
-        'RetroHursty69 HyperCuphead'		
-        'RetroHursty69 HyperCrashBandicoot'
-		'RetroHursty69 HyperDarkstalkers'
-		'RetroHursty69 HyperDarthVader'		
-        'RetroHursty69 HyperDayTentacle'		
-        'RetroHursty69 HyperDeadOrAlive'
-        'RetroHursty69 HyperDeadPool'		
-        'RetroHursty69 HyperDevilMayCry'
-        'RetroHursty69 HyperDigDug'		
-        'RetroHursty69 HyperDonkeyKong'
-        'RetroHursty69 HyperDonkeyKongJr'
-		'RetroHursty69 HyperDrEggman'
-		'RetroHursty69 HyperFulgor'		
-        'RetroHursty69 HyperFrogger'
-		'RetroHursty69 HyperGodOfWar'		
-        'RetroHursty69 HyperGTA1'
-        'RetroHursty69 HyperGTA2'
-		'RetroHursty69 HyperHalo'
-		'RetroHursty69 HyperHanSolo'		
-		'RetroHursty69 HyperHarleyQuinn'		
-		'RetroHursty69 HyperHulk'
-		'RetroHursty69 HyperIndianaJones'		
-		'RetroHursty69 HyperIronMan'		
-		'RetroHursty69 HyperIvy'		
-		'RetroHursty69 HyperJakDaxter'		
-        'RetroHursty69 HyperJinKazama'
-        'RetroHursty69 HyperKirby'
-        'RetroHursty69 HyperLink'
-		'RetroHursty69 HyperKOF1'
-		'RetroHursty69 HyperKOF2'
-		'RetroHursty69 HyperKOF3'
-		'RetroHursty69 HyperKOF4'
-		'RetroHursty69 HyperKOF5'
-		'RetroHursty69 HyperKOF6'
-		'RetroHursty69 HyperKOF7'
-		'RetroHursty69 HyperKOF8'
-		'RetroHursty69 HyperKOF9'
-		'RetroHursty69 HyperKOF10'
-		'RetroHursty69 HyperKOF11'
-		'RetroHursty69 HyperKOF12'
-		'RetroHursty69 HyperKOF13'
-		'RetroHursty69 HyperKOF14'
-		'RetroHursty69 HyperKOF15'
-		'RetroHursty69 HyperKOF16'
-		'RetroHursty69 HyperKOF17'
-		'RetroHursty69 HyperKOF18'
-		'RetroHursty69 HyperKOF19'
-		'RetroHursty69 HyperKOF20'
-		'RetroHursty69 HyperLego'		
-        'RetroHursty69 HyperLuigi'
-		'RetroHursty69 HyperMameinaBox'
-        'RetroHursty69 HyperMario'
-		'RetroHursty69 HyperMitsurugi'		
-		'RetroHursty69 HyperMK1'
-		'RetroHursty69 HyperMK2'
-		'RetroHursty69 HyperMK3'
-		'RetroHursty69 HyperMK4'
-		'RetroHursty69 HyperMK5'
-		'RetroHursty69 HyperMK6'
-		'RetroHursty69 HyperMK7'
-		'RetroHursty69 HyperMK8'
-		'RetroHursty69 HyperMK9'
-		'RetroHursty69 HyperMK10'
-		'RetroHursty69 HyperMK11'
-		'RetroHursty69 HyperMK12'
-		'RetroHursty69 HyperMK13'
-		'RetroHursty69 HyperNeoCortex'
-		'RetroHursty69 HyperNintendo1'
-		'RetroHursty69 HyperNintendo2'
-		'RetroHursty69 HyperNintendo3'
-		'RetroHursty69 HyperNintendo4'
-		'RetroHursty69 HyperNintendo5'
-		'RetroHursty69 HyperNintendo6'
-		'RetroHursty69 HyperNintendo7'
-		'RetroHursty69 HyperNintendo8'
-		'RetroHursty69 HyperNintendo9'
-		'RetroHursty69 HyperNintendo10'
-		'RetroHursty69 HyperNintendo11'
-		'RetroHursty69 HyperNintendo12'
-		'RetroHursty69 HyperNintendo13'
-		'RetroHursty69 HyperNintendo14'
-		'RetroHursty69 HyperNintendo15'
-		'RetroHursty69 HyperNintendo16'
-		'RetroHursty69 HyperNintendo17'
-		'RetroHursty69 HyperNintendo18'
-		'RetroHursty69 HyperNintendo19'
-		'RetroHursty69 HyperNintendo20'
-		'RetroHursty69 HyperNintendo21'
-		'RetroHursty69 HyperNintendo22'
-		'RetroHursty69 HyperNintendo23'
-		'RetroHursty69 HyperNintendo24'
-		'RetroHursty69 HyperNintendo25'
-		'RetroHursty69 HyperNintendo26'
-		'RetroHursty69 HyperNintendo27'
-		'RetroHursty69 HyperNintendo28'
-		'RetroHursty69 HyperNintendo29'
-		'RetroHursty69 HyperNintendo30'
-		'RetroHursty69 HyperNintendo31'
-		'RetroHursty69 HyperNintendo32'
-		'RetroHursty69 HyperNintendo33'
-		'RetroHursty69 HyperNintendo34'
-		'RetroHursty69 HyperNintendo35'
-		'RetroHursty69 HyperNintendo36'
-		'RetroHursty69 HyperNintendo37'
-		'RetroHursty69 HyperNintendo38'
-		'RetroHursty69 HyperNintendo39'
-		'RetroHursty69 HyperNintendo40'
-		'RetroHursty69 HyperNintendo41'
-		'RetroHursty69 HyperNintendo42'
-		'RetroHursty69 HyperNintendo43'
-		'RetroHursty69 HyperNintendo44'
-		'RetroHursty69 HyperNintendo45'
-		'RetroHursty69 HyperNintendo46'
-		'RetroHursty69 HyperNintendo47'
-		'RetroHursty69 HyperNintendo48'
-		'RetroHursty69 HyperNintendo49'
-		'RetroHursty69 HyperNintendo50'		
-        'RetroHursty69 HyperPacman'
-		'RetroHursty69 HyperPayDay'
-		'RetroHursty69 HyperR2D2'		
-		'RetroHursty69 HyperRachet'
-		'RetroHursty69 HyperRetroArena'		
-        'RetroHursty69 HyperRyu'
-		'RetroHursty69 HyperSackBoy'		
-        'RetroHursty69 HyperScorpion'
-        'RetroHursty69 HyperSonic'
-        'RetroHursty69 HyperSpaceInvaders'
-        'RetroHursty69 HyperSpiderman'
-		'RetroHursty69 HyperSplinterCell'
-		'RetroHursty69 HyperSpaceChannel5'		
-        'RetroHursty69 HyperSpyro'
-		'RetroHursty69 HyperStreetFighter1'
-		'RetroHursty69 HyperStreetFighter2'
-		'RetroHursty69 HyperStreetFighter3'
-		'RetroHursty69 HyperStreetFighter4'
-		'RetroHursty69 HyperStreetFighter5'
-		'RetroHursty69 HyperStreetFighter6'
-		'RetroHursty69 HyperStreetFighter7'
-		'RetroHursty69 HyperStreetFighter8'
-		'RetroHursty69 HyperStreetFighter9'
-		'RetroHursty69 HyperStreetFighter10'
-		'RetroHursty69 HyperStreetFighter11'
-		'RetroHursty69 HyperTails'
-		'RetroHursty69 HyperTaki'		
-        'RetroHursty69 HyperTerryBogard'
-		'RetroHursty69 HyperThor'		
-        'RetroHursty69 HyperTMNT'
-        'RetroHursty69 HyperToad'
-		'RetroHursty69 HyperXMen1'
-		'RetroHursty69 HyperXMen2'
-		'RetroHursty69 HyperXMen3'
-		'RetroHursty69 HyperXMen4'
-		'RetroHursty69 HyperXMen5'
-		'RetroHursty69 HyperXMen6'
-		'RetroHursty69 HyperXMen7'
-		'RetroHursty69 HyperXMen8'
-		'RetroHursty69 HyperXMen9'
-    )
-    while true; do
-        local theme
-        local installed_themes=()
-        local repo
-        local options=()
-        local status=()
-        local default
-
-        local i=1
-        for theme in "${themes[@]}"; do
-            theme=($theme)
-            repo="${theme[0]}"
-            theme="${theme[1]}"
-            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
-                status+=("i")
-                options+=("$i" "Update or Uninstall $theme (installed)")
-                installed_themes+=("$theme $repo")
-            else
-                status+=("n")
-                options+=("$i" "Install $theme (not installed)")
-            fi
-            ((i++))
-        done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
-        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-        default="$choice"
-        [[ -z "$choice" ]] && break
-        case "$choice" in
-            *)  #install or update themes
-                theme=(${themes[choice-1]})
-                repo="${theme[0]}"
-                theme="${theme[1]}"
-#                if [[ "${status[choice]}" == "i" ]]; then
-                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
-                    options=(1 "Update $theme" 2 "Uninstall $theme")
-                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
-                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-                    case "$choice" in
-                        1)
-                            install_theme_hurstythemes "$theme" "$repo"
-                            ;;
-                        2)
-                            uninstall_theme_hurstythemes "$theme"
-                            ;;
-                    esac
-                else
-                    install_theme_hurstythemes "$theme" "$repo"
-                fi
-                ;;
-        esac
-    done	
-}
-
-function mario_themes() {
-    local themes=(
-         'RetroHursty69 DrMarioSweet'
-         'RetroHursty69 MarioBrosSweet'
-         'RetroHursty69 MarioKartSweet'
-         'RetroHursty69 MarioPartySweet'
-         'RetroHursty69 PaperMarioSweet'
-         'RetroHursty69 DrMarioCool'
-         'RetroHursty69 MarioBrosCool'
-         'RetroHursty69 MarioCool'
-         'RetroHursty69 MarioKartCool'
-         'RetroHursty69 MarioPartyCool'
-		 'RetroHursty69 DrMarioSpin'
-		 'RetroHursty69 MarioSpin'
-		 'RetroHursty69 mariobrosiii'
-         'RetroHursty69 mario_melee'
-		 'RetroHursty69 DrMarioBlue'
-  		 'RetroHursty69 MarioBlue'
-		 'RetroHursty69 DrMarioGreen'
-		 'RetroHursty69 MarioGreen'
-		 'RetroHursty69 DrMarioNeon'
-		 'RetroHursty69 MarioNeon'
-		 'RetroHursty69 mariobrosiii'
-         'RetroHursty69 HyperMario'
-    )
-    while true; do
-        local theme
-        local installed_themes=()
-        local repo
-        local options=()
-        local status=()
-        local default
-
-        local i=1
-        for theme in "${themes[@]}"; do
-            theme=($theme)
-            repo="${theme[0]}"
-            theme="${theme[1]}"
-            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
-                status+=("i")
-                options+=("$i" "Update or Uninstall $theme (installed)")
-                installed_themes+=("$theme $repo")
-            else
-                status+=("n")
-                options+=("$i" "Install $theme (not installed)")
-            fi
-            ((i++))
-        done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
-        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-        default="$choice"
-        [[ -z "$choice" ]] && break
-        case "$choice" in
-            *)  #install or update themes
-                theme=(${themes[choice-1]})
-                repo="${theme[0]}"
-                theme="${theme[1]}"
-#                if [[ "${status[choice]}" == "i" ]]; then
-                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
-                    options=(1 "Update $theme" 2 "Uninstall $theme")
-                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
-                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-                    case "$choice" in
-                        1)
-                            install_theme_hurstythemes "$theme" "$repo"
-                            ;;
-                        2)
-                            uninstall_theme_hurstythemes "$theme"
-                            ;;
-                    esac
-                else
-                    install_theme_hurstythemes "$theme" "$repo"
-                fi
-                ;;
-        esac
-    done
-}
-
 gui_hurstythemes
