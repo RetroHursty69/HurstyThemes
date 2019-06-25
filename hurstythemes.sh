@@ -77,7 +77,7 @@ function gui_hurstythemes() {
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
         options+=(I "16:9 Aspect Themes Manager (78 Themes)")
-        options+=(J "5:4 Aspect Themes Manager (3 Themes)")
+        options+=(J "5:4 Aspect Themes Manager (4 Themes)")
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
         options+=(M "Chromey Green Themes Manager (133 Themes)")
@@ -103,7 +103,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1231 Themes as at 14 June 2019)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1232 Themes as at 14 June 2019)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -1031,6 +1031,7 @@ function 5x4_themes() {
     local themes=(
         'RetroHursty69 arcade1up_aspectratio54'
         'RetroHursty69 heychromey_aspectratio54'
+        'RetroHursty69 hurstyuparcade_aspectratio54'
         'RetroHursty69 supersweet_aspectratio54'
     )
     while true; do
