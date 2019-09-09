@@ -76,7 +76,7 @@ function gui_hurstythemes() {
         options+=(F "Mini Sweet Themes Manager (239 Themes)")
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
-        options+=(I "16:9 Aspect Themes Manager (84 Themes)")
+        options+=(I "16:9 Aspect Themes Manager (85 Themes)")
         options+=(J "5:4 Aspect Themes Manager (4 Themes)")
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
@@ -103,7 +103,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1238 Themes as at 6 September 2019)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1239 Themes as at 9 September 2019)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -941,6 +941,7 @@ function 16x9_themes() {
         'RetroHursty69 license2game'
         'RetroHursty69 lightswitch'
         'RetroHursty69 magazinemadness'
+        'RetroHursty69 magazinemadness2'
 		'RetroHursty69 marco'
 		'RetroHursty69 mariobrosiii'
         'RetroHursty69 mario_melee'
