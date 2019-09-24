@@ -103,7 +103,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1241 Themes as at 24 September 2019)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1242 Themes as at 24 September 2019)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -1729,6 +1729,7 @@ function hurstypicks_themes() {
         'RetroHursty69 cardcrazy'
         'RetroHursty69 circuit'
         'RetroHursty69 corg'
+		'RetroHursty69 CosmicRise'
         'RetroHursty69 fabuloso'
 		'RetroHursty69 floyd'
         'RetroHursty69 greenilicious'
@@ -1738,14 +1739,17 @@ function hurstypicks_themes() {
         'RetroHursty69 HyperLuigi'
         'RetroHursty69 HyperMario'		
         'RetroHursty69 magazinemadness'
+		'RetroHursty69 magazinemadness2'
 		'RetroHursty69 marco'
 		'RetroHursty69 mariobrosiii'
+		'RetroHursty69 meshy'
         'RetroHursty69 retroroid'
         'RetroHursty69 Slick_Red'
         'RetroHursty69 soda'
         'RetroHursty69 stirling'
         'RetroHursty69 supersweet'
         'RetroHursty69 swatch'
+		'RetroHursty69 uniflyered'
         'RetroHursty69 whiteslide'
     )
     while true; do
