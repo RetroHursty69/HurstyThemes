@@ -81,7 +81,7 @@ function gui_hurstythemes() {
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
         options+=(M "Chromey Green Themes Manager (133 Themes)")
-        options+=(N "Chromey Neon Themes Manager (133 Themes)")
+        options+=(N "Chromey Neon Themes Manager (134 Themes)")
         options+=(O "Hursty's Picks Themes Manager (23 Themes)")
 		options+=(P "Handheld (3:2, 4:3) Themes Manager (11 Themes)")
 		options+=(Q "Slick Themes Manager (29 Themes)")
@@ -103,7 +103,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1242 Themes as at 24 September 2019)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1243 Themes as at 2 October 2019)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -1664,6 +1664,7 @@ function chromeyneon_themes() {
 	'RetroHursty69 WaluigiNeon'
 	'RetroHursty69 WarioNeon'
 	'RetroHursty69 WormsNeon'
+	'RetroHursty69 WrestlefestNeon'
 	'RetroHursty69 XMenNeon'
 	'RetroHursty69 YoshiNeon'
 	'RetroHursty69 ZeldaNeon'
