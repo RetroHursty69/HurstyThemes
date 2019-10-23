@@ -86,7 +86,8 @@ function gui_hurstythemes() {
 		options+=(P "Handheld (3:2, 4:3) Themes Manager (11 Themes)")
 		options+=(Q "Slick Themes Manager (29 Themes)")
 		options+=(R "Hyper Themes Manager (177 Themes)")
-		options+=(S "Mario Themes Manager (22 Themes)")		
+		options+=(S "Mario Themes Manager (22 Themes)")
+		options+=(T "GPi (320x240) Themes Manager (4 Themes)")				
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -103,7 +104,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1243 Themes as at 2 October 2019)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1247 Themes as at 24 October 2019)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -167,7 +168,10 @@ function gui_hurstythemes() {
                 ;;
             S)  #mario themes
                 mario_themes
-                ;;				
+                ;;
+            T)  #GPi themes
+                GPi_themes
+                ;;                				
             *)  #install or update themes
                 theme=(${themes[choice-1]})
                 repo="${theme[0]}"
@@ -2215,6 +2219,66 @@ function mario_themes() {
 		 'RetroHursty69 MarioNeon'
 		 'RetroHursty69 mariobrosiii'
          'RetroHursty69 HyperMario'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done
+}
+
+function GPi_themes() {
+    local themes=(
+         'RetroHursty69 GPi_SuperSweet'
+         'RetroHursty69 GPi_PopBox'
+         'RetroHursty69 GPi_GPiBoy'
+         'RetroHursty69 GPi_CosmicRise'
     )
     while true; do
         local theme
