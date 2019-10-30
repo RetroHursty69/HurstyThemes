@@ -87,7 +87,7 @@ function gui_hurstythemes() {
 		options+=(Q "Slick Themes Manager (29 Themes)")
 		options+=(R "Hyper Themes Manager (177 Themes)")
 		options+=(S "Mario Themes Manager (22 Themes)")
-		options+=(T "GPi (320x240) Themes Manager (13 Themes)")				
+		options+=(T "GPi (320x240) Themes Manager (14 Themes)")				
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -104,7 +104,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1256 Themes as at 30 October 2019)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1257 Themes as at 30 October 2019)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -2288,6 +2288,7 @@ function GPi_themes() {
         'RetroHursty69 GPi_Sublime'
 		'RetroHursty69 GPi_Soda'
 		'RetroHursty69 GPi_Trio'
+		'RetroHursty69 GPi_UniFlyered'
     )
     while true; do
         local theme
