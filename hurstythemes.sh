@@ -2298,7 +2298,6 @@ function GPi_themes() {
         'RetroHursty69 GPi_ChunLiCapcom'
         'RetroHursty69 GPi_DeeJayCapcom'
         'RetroHursty69 GPi_DemitriCapcom'
-        'RetroHursty69 GPi_DhalsimCapcom'
         'RetroHursty69 GPi_GhoulsCapcom'
 		'RetroHursty69 GPi_GuileCapcom'
         'RetroHursty69 GPi_HondaCapcom'
