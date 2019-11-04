@@ -87,7 +87,7 @@ function gui_hurstythemes() {
 		options+=(Q "Slick Themes Manager (29 Themes)")
 		options+=(R "Hyper Themes Manager (177 Themes)")
 		options+=(S "Mario Themes Manager (22 Themes)")
-		options+=(T "GPi (320x240) Themes Manager (15 Themes)")				
+		options+=(T "GPi (320x240) Themes Manager (32 Themes)")				
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -104,7 +104,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1258 Themes as at 31 October 2019)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1275 Themes as at 4 November 2019)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -2290,6 +2290,23 @@ function GPi_themes() {
 		'RetroHursty69 GPi_Soda'
 		'RetroHursty69 GPi_Trio'
 		'RetroHursty69 GPi_UniFlyered'
+        'RetroHursty69 GPi_BalrogCapcom'
+        'RetroHursty69 GPi_BisonCapcom'
+        'RetroHursty69 GPi_BlankaCapcom'
+        'RetroHursty69 GPi_CammyCapcom'
+        'RetroHursty69 GPi_CapCommandoCapcom'		
+        'RetroHursty69 GPi_ChunLiCapcom'
+        'RetroHursty69 GPi_DeeJayCapcom'
+        'RetroHursty69 GPi_DemitriCapcom'
+        'RetroHursty69 GPi_DhalsimCapcom'
+        'RetroHursty69 GPi_GhoulsCapcom'
+		'RetroHursty69 GPi_GuileCapcom'
+        'RetroHursty69 GPi_HondaCapcom'
+		'RetroHursty69 GPi_KenCapcom'
+		'RetroHursty69 GPi_RyuCapcom'
+		'RetroHursty69 GPi_SagatCapcom'
+		'RetroHursty69 GPi_THawkCapcom'
+		'RetroHursty69 GPi_ZangiefCapcom'		
     )
     while true; do
         local theme
