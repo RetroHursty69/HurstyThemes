@@ -19,7 +19,7 @@ cp /tmp/hursty/hurstythemes.sh /home/pi/RetroPie/retropiemenu
 chmod 777 /home/pi/RetroPie/retropiemenu/hurstythemes.sh
 cp /tmp/hursty/hurstythemes.png /home/pi/RetroPie/retropiemenu/icons
 if [[ -d "/home/pi/scripts" ]]; then
-     #nothing
+echo "exists" > /dev/null
 else
     mkdir /home/pi/scripts
 fi
