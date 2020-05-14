@@ -73,7 +73,7 @@ function gui_hurstythemes() {
         options+=(U "Update install script - script will exit when updated")
         options+=(E "Enable ES bootup theme randomizer")
         options+=(D "Disable ES bootup theme randomizer")
-        options+=(F "Mini Sweet Themes Manager (239 Themes)")
+        options+=(F "Mini Sweet Themes Manager (240 Themes)")
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
         options+=(I "16:9 Aspect Themes Manager (88 Themes)")
@@ -104,7 +104,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1281 Themes as at 26 November 2019)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1282 Themes as at 15 May 2020)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -269,6 +269,7 @@ function sweet_themes() {
         'RetroHursty69 FatalFurySweet'
         'RetroHursty69 FelixSweet'
         'RetroHursty69 FinalFantasySweet'
+        'RetroHursty69 FinalFightSweet'
         'RetroHursty69 FindingNemoSweet'
         'RetroHursty69 FlintstonesSweet'
         'RetroHursty69 FortniteSweet'
