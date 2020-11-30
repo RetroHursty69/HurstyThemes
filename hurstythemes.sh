@@ -87,7 +87,8 @@ function gui_hurstythemes() {
 		options+=(Q "Slick Themes Manager (29 Themes)")
 		options+=(R "Hyper Themes Manager (177 Themes)")
 		options+=(S "Mario Themes Manager (22 Themes)")
-		options+=(T "GPi (320x240) Themes Manager (37 Themes)")				
+		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
+		options+=(U "Comic (16:9) Themes Manager (10 Themes)")		
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -104,7 +105,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1285 Themes as at 15 July 2020)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1295 Themes as at 30 November 2020)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -171,7 +172,10 @@ function gui_hurstythemes() {
                 ;;
             T)  #GPi themes
                 GPi_themes
-                ;;                				
+                ;;
+            U)  #Comic themes
+                Comic_themes
+                ;;				
             *)  #install or update themes
                 theme=(${themes[choice-1]})
                 repo="${theme[0]}"
@@ -2317,6 +2321,72 @@ function GPi_themes() {
 		'RetroHursty69 GPi_SagatCapcom'
 		'RetroHursty69 GPi_THawkCapcom'
 		'RetroHursty69 GPi_ZangiefCapcom'		
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done
+}
+
+function Comic_themes() {
+    local themes=(
+			'RetroHursty69 es-theme-ComicMK'
+			'RetroHursty69 es-theme-ComicMARVEL'
+			'RetroHursty69 es-theme-ComicMARIO'
+			'RetroHursty69 es-theme-ComicDARKSTALKERS'
+			'RetroHursty69 es-theme-ComicSTREETFIGHT'
+			'RetroHursty69 es-theme-ComicZELDA'
+			'RetroHursty69 es-theme-ComicXMEN'
+			'RetroHursty69 es-theme-ComicSONIC'
+			'RetroHursty69 es-theme-ComicPACMAN'
+			'RetroHursty69 es-theme-ComicCRASHB'		
     )
     while true; do
         local theme
