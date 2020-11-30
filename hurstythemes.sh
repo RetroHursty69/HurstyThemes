@@ -2377,16 +2377,16 @@ function GPi_themes() {
 
 function Comic_themes() {
     local themes=(
-			'RetroHursty69 es-theme-ComicMK'
-			'RetroHursty69 es-theme-ComicMARVEL'
-			'RetroHursty69 es-theme-ComicMARIO'
-			'RetroHursty69 es-theme-ComicDARKSTALKERS'
-			'RetroHursty69 es-theme-ComicSTREETFIGHT'
-			'RetroHursty69 es-theme-ComicZELDA'
-			'RetroHursty69 es-theme-ComicXMEN'
-			'RetroHursty69 es-theme-ComicSONIC'
-			'RetroHursty69 es-theme-ComicPACMAN'
-			'RetroHursty69 es-theme-ComicCRASHB'		
+			'RetroHursty69 ComicMK'
+			'RetroHursty69 ComicMARVEL'
+			'RetroHursty69 ComicMARIO'
+			'RetroHursty69 ComicDARKSTALKERS'
+			'RetroHursty69 ComicSTREETFIGHT'
+			'RetroHursty69 ComicZELDA'
+			'RetroHursty69 ComicXMEN'
+			'RetroHursty69 ComicSONIC'
+			'RetroHursty69 ComicPACMAN'
+			'RetroHursty69 ComicCRASHB'		
     )
     while true; do
         local theme
