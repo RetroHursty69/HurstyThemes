@@ -88,7 +88,7 @@ function gui_hurstythemes() {
 		options+=(R "Hyper Themes Manager (177 Themes)")
 		options+=(S "Mario Themes Manager (22 Themes)")
 		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
-		options+=(U "Comic (16:9) Themes Manager (10 Themes)")		
+		options+=(V "Comic (16:9) Themes Manager (10 Themes)")		
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -173,7 +173,7 @@ function gui_hurstythemes() {
             T)  #GPi themes
                 GPi_themes
                 ;;
-            U)  #Comic themes
+            V)  #Comic themes
                 Comic_themes
                 ;;				
             *)  #install or update themes
