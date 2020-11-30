@@ -88,7 +88,7 @@ function gui_hurstythemes() {
 		options+=(R "Hyper Themes Manager (177 Themes)")
 		options+=(S "Mario Themes Manager (22 Themes)")
 		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
-		options+=(V "Comic (16:9) Themes Manager (10 Themes)")		
+		options+=(V "Comic (16:9) Themes Manager (11 Themes)")		
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -105,7 +105,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1295 Themes as at 30 November 2020)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1296 Themes as at 30 November 2020)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -2386,7 +2386,8 @@ function Comic_themes() {
 			'RetroHursty69 ComicXMEN'
 			'RetroHursty69 ComicSONIC'
 			'RetroHursty69 ComicPACMAN'
-			'RetroHursty69 ComicCRASHB'		
+			'RetroHursty69 ComicCRASHB'
+			'RetroHursty69 ComicCOVERS'		
     )
     while true; do
         local theme
