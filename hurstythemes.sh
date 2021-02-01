@@ -77,7 +77,7 @@ function gui_hurstythemes() {
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
         options+=(I "16:9 Aspect Themes Manager (91 Themes)")
-        options+=(J "5:4 Aspect Themes Manager (4 Themes)")
+        options+=(J "5:4 Aspect Themes Manager (5 Themes)")
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
         options+=(M "Chromey Green Themes Manager (133 Themes)")
@@ -1055,6 +1055,7 @@ function 5x4_themes() {
         'RetroHursty69 heychromey_aspectratio54'
         'RetroHursty69 hurstyuparcade_aspectratio54'
         'RetroHursty69 supersweet_aspectratio54'
+        'RetroHursty69 arcade1up_spaceinv2_vertical'
     )
     while true; do
         local theme
