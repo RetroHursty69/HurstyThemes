@@ -904,6 +904,7 @@ function spin_themes() {
 
 function 16x9_themes() {
     local themes=(
+        'RetroHursty69 2DAI4_Ratio_16-9'
         'RetroHursty69 back2basics'
         'RetroHursty69 batmanburton'
         'RetroHursty69 bitfit'
@@ -1055,6 +1056,7 @@ function 16x9_themes() {
 
 function 5x4_themes() {
     local themes=(
+        'RetroHursty69 2DAI4_Ratio_5-4'
         'RetroHursty69 arcade1up_aspectratio54'
         'RetroHursty69 heychromey_aspectratio54'
         'RetroHursty69 hurstyuparcade_aspectratio54'
