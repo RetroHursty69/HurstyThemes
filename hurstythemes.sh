@@ -1062,6 +1062,7 @@ function 5x4_themes() {
         'RetroHursty69 hurstyuparcade_aspectratio54'
         'RetroHursty69 supersweet_aspectratio54'
         'RetroHursty69 arcade1up_spaceinv2_vertical'
+        'RetroHursty69 Vertical-Limit-A1UP-1024x1280'
     )
     while true; do
         local theme
