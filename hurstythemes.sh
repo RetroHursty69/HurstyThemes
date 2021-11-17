@@ -76,8 +76,8 @@ function gui_hurstythemes() {
         options+=(F "Mini Sweet Themes Manager (240 Themes)")
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
-        options+=(I "16:9 Aspect Themes Manager (94 Themes)")
-        options+=(J "5:4 Aspect Themes Manager (5 Themes)")
+        options+=(I "16:9 Aspect Themes Manager (96 Themes)")
+        options+=(J "5:4 Aspect Themes Manager (7 Themes)")
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
         options+=(M "Chromey Green Themes Manager (133 Themes)")
@@ -796,7 +796,7 @@ function spin_themes() {
 	'RetroHursty69 PunchoutSpin'
 	'RetroHursty69 QBertSpin'
 	'RetroHursty69 RachetClankSpin'
-    	'RetroHursty69 RaidenSpin'	
+    'RetroHursty69 RaidenSpin'	
 	'RetroHursty69 RaymanSpin'
 	'RetroHursty69 RetroArenaSpin'
 	'RetroHursty69 ReaperSpin'
@@ -920,6 +920,7 @@ function 16x9_themes() {
 		'RetroHursty69 CapcomColorSpin'
 		'RetroHursty69 CapcomColorVertical'
         'RetroHursty69 cardcrazy'
+		'RetroHursty69 Card_Decky_16x9'
         'RetroHursty69 circuit'
         'RetroHursty69 comiccrazy'
         'RetroHursty69 corg'
@@ -993,6 +994,8 @@ function 16x9_themes() {
         'RetroHursty69 swatch'
 		'RetroHursty69 sweet_tinkerboard'
 		'RetroHursty69 sweeter_tinkerboard'
+		'RetroHursty69 synthy16x9'
+		'RetroHursty69 supersynthy16x9'		
         'RetroHursty69 tmnt'
         'RetroHursty69 tributeGoT'
         'RetroHursty69 tributeSTrek'
@@ -1056,7 +1059,10 @@ function 16x9_themes() {
 
 function 5x4_themes() {
     local themes=(
-        'RetroHursty69 2DAI4_Ratio_5-4'
+        'RetroHursty69 synthyA1UP'
+		'RetroHursty69 supersynthyA1UP'	
+        'RetroHursty69 Card_Decky_5x4'		
+		'RetroHursty69 2DAI4_Ratio_5-4'
         'RetroHursty69 arcade1up_aspectratio54'
         'RetroHursty69 heychromey_aspectratio54'
         'RetroHursty69 hurstyuparcade_aspectratio54'
