@@ -76,7 +76,7 @@ function gui_hurstythemes() {
         options+=(F "Mini Sweet Themes Manager (240 Themes)")
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
-        options+=(I "16:9 Aspect Themes Manager (99 Themes)")
+        options+=(I "16:9 Aspect Themes Manager (100 Themes)")
         options+=(J "5:4 Aspect Themes Manager (7 Themes)")
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
@@ -985,7 +985,8 @@ function 16x9_themes() {
         'RetroHursty69 retroboy2'
         'RetroHursty69 retrogamenews'
         'RetroHursty69 retroroid'
-        'RetroHursty69 ShadowClean'		
+        'RetroHursty69 ShadowClean'
+		'RetroHursty69 shine'		
         'RetroHursty69 snapback'
         'RetroHursty69 snazzy'
         'RetroHursty69 soda'
