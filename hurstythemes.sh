@@ -76,8 +76,8 @@ function gui_hurstythemes() {
         options+=(F "Mini Sweet Themes Manager (240 Themes)")
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
-        options+=(I "16:9 Aspect Themes Manager (101 Themes)")
-        options+=(J "5:4 Aspect Themes Manager (7 Themes)")
+        options+=(I "16:9 Aspect Themes Manager (102 Themes)")
+        options+=(J "5:4 Aspect Themes Manager (8 Themes)")
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
         options+=(M "Chromey Green Themes Manager (133 Themes)")
@@ -922,6 +922,7 @@ function 16x9_themes() {
         'RetroHursty69 cardcrazy'
 		'RetroHursty69 Card_Decky_16x9'
         'RetroHursty69 circuit'
+		'RetroHursty69 ColorfulExtreme'
         'RetroHursty69 comiccrazy'
         'RetroHursty69 corg'
 		'RetroHursty69 CosmicRise'
@@ -1074,6 +1075,7 @@ function 5x4_themes() {
         'RetroHursty69 supersweet_aspectratio54'
         'RetroHursty69 arcade1up_spaceinv2_vertical'
         'RetroHursty69 Vertical-Limit-A1UP-1024x1280'
+		'RetroHursty69 MK54'
     )
     while true; do
         local theme
