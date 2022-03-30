@@ -105,7 +105,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (Well over 1300 Themes as at 15 March 2022)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (Well over 1300 Themes as at 31 March 2022)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -922,7 +922,9 @@ function 16x9_themes() {
         'RetroHursty69 cardcrazy'
 		'RetroHursty69 Card_Decky_16x9'
         'RetroHursty69 circuit'
+		'RetroHursty69 CircularEssence'
 		'RetroHursty69 ColorfulExtreme'
+		'RetroHursty69 ColorfulSupreme'
         'RetroHursty69 comiccrazy'
         'RetroHursty69 corg'
 		'RetroHursty69 CosmicRise'
