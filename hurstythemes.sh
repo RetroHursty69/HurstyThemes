@@ -988,6 +988,8 @@ function 16x9_themes() {
         'RetroHursty69 retroboy2'
         'RetroHursty69 retrogamenews'
         'RetroHursty69 retroroid'
+		'RetroHursty69 ShabangCLEAN'
+		'RetroHursty69 ShabangCRT'
         'RetroHursty69 ShadowClean'
 		'RetroHursty69 shine'		
         'RetroHursty69 snapback'
@@ -1068,7 +1070,8 @@ function 16x9_themes() {
 function 5x4_themes() {
     local themes=(
         'RetroHursty69 synthyA1UP'
-		'RetroHursty69 supersynthyA1UP'	
+		'RetroHursty69 supersynthyA1UP'
+		'RetroHursty69 Shabang5x4'		
         'RetroHursty69 Card_Decky_5x4'		
 		'RetroHursty69 2DAI4_Ratio_5-4'
         'RetroHursty69 arcade1up_aspectratio54'
@@ -1782,6 +1785,7 @@ function hurstypicks_themes() {
 		'RetroHursty69 meshy'
 		'RetroHursty69 NeonFantasy'
         'RetroHursty69 retroroid'
+		'RetroHursty69 ShabangCRT'
         'RetroHursty69 Slick_Red'
         'RetroHursty69 soda'
         'RetroHursty69 stirling'
