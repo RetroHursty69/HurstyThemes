@@ -912,6 +912,7 @@ function 16x9_themes() {
 		'RetroHursty69 blueprism'
 		'RetroHursty69 bluesmooth'	
         'RetroHursty69 bluray'
+		'RetroHursty69 BoomBoxStreet'
         'RetroHursty69 boxalloyblue'
         'RetroHursty69 boxalloyred'
         'RetroHursty69 boxcity'
@@ -1081,6 +1082,7 @@ function 5x4_themes() {
         'RetroHursty69 arcade1up_spaceinv2_vertical'
         'RetroHursty69 Vertical-Limit-A1UP-1024x1280'
 		'RetroHursty69 MK54'
+		'RetroHursty69 BoomBoxStreet4x3'
     )
     while true; do
         local theme
