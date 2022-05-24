@@ -2494,7 +2494,10 @@ function Slanty_themes() {
 			'RetroHursty69 Slanty_DigDug'
 			'RetroHursty69 Slanty_DKJunior'
 			'RetroHursty69 Slanty_DonkeyKong'
-			'RetroHursty69 Slanty_Doom'			
+			'RetroHursty69 Slanty_Doom'
+			'RetroHursty69 Slanty_DrMario'
+			'RetroHursty69 Slanty_Earthbound'
+			'RetroHursty69 Slanty_Eggman'			
     )
     while true; do
         local theme
