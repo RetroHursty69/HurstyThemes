@@ -178,7 +178,7 @@ function gui_hurstythemes() {
                 Comic_themes
                 ;;
             W)  #Slanty themes
-                Comic_themes
+                Slanty_themes
                 ;;					
             *)  #install or update themes
                 theme=(${themes[choice-1]})
