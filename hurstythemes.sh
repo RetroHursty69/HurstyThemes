@@ -2479,7 +2479,22 @@ function Comic_themes() {
 
 function Slanty_themes() {
     local themes=(
-			'RetroHursty69 Slanty_Batman'	
+			'RetroHursty69 Slanty_Agent47'
+			'RetroHursty69 Slanty_AlexKidd'
+			'RetroHursty69 Slanty_Astroboy'
+			'RetroHursty69 Slanty_Batman'
+			'RetroHursty69 Slanty_Battletoads'
+			'RetroHursty69 Slanty_Bomberman'
+			'RetroHursty69 Slanty_Boogerman'
+			'RetroHursty69 Slanty_Bowser'
+			'RetroHursty69 Slanty_BubbleBobble'
+			'RetroHursty69 Slanty_Castlevania'
+			'RetroHursty69 Slanty_CrashBandicoot'
+			'RetroHursty69 Slanty_DarkStalkers'
+			'RetroHursty69 Slanty_DigDug'
+			'RetroHursty69 Slanty_DKJunior'
+			'RetroHursty69 Slanty_DonkeyKong'
+			'RetroHursty69 Slanty_Doom'			
     )
     while true; do
         local theme
