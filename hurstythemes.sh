@@ -2477,7 +2477,7 @@ function Comic_themes() {
     done
 }
 
-Function Slanty_themes() {
+function Slanty_themes() {
     local themes=(
 			'RetroHursty69 Slanty_Agent47'
 			'RetroHursty69 Slanty_AlexKidd'
