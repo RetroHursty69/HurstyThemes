@@ -2497,7 +2497,17 @@ function Slanty_themes() {
 			'RetroHursty69 Slanty_Doom'
 			'RetroHursty69 Slanty_DrMario'
 			'RetroHursty69 Slanty_Earthbound'
-			'RetroHursty69 Slanty_Eggman'			
+			'RetroHursty69 Slanty_EarthwormJim'
+			'RetroHursty69 Slanty_Eggman'
+			'RetroHursty69 Slanty_FinalFantasy'
+			'RetroHursty69 Slanty_FZero'
+			'RetroHursty69 Slanty_GameWatch'
+			'RetroHursty69 Slanty_Ganon'
+			'RetroHursty69 Slanty_GoW'
+			'RetroHursty69 Slanty_Halo'
+			'RetroHursty69 Slanty_Hulk'
+			'RetroHursty69 Slanty_KingdomHearts'
+			'RetroHursty69 Slanty_Kirby'			
     )
     while true; do
         local theme
