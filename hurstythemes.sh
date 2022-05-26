@@ -2507,7 +2507,17 @@ function Slanty_themes() {
 			'RetroHursty69 Slanty_Halo'
 			'RetroHursty69 Slanty_Hulk'
 			'RetroHursty69 Slanty_KingdomHearts'
-			'RetroHursty69 Slanty_Kirby'			
+			'RetroHursty69 Slanty_Kirby'
+			'RetroHursty69 Slanty_KoF'
+			'RetroHursty69 Slanty_Koopa'
+			'RetroHursty69 Slanty_Lego'
+			'RetroHursty69 Slanty_Lemmings'
+			'RetroHursty69 Slanty_Link'
+			'RetroHursty69 Slanty_Luigi'
+			'RetroHursty69 Slanty_Mario'
+			'RetroHursty69 Slanty_Megaman'
+			'RetroHursty69 Slanty_Metroid'
+			'RetroHursty69 Slanty_MKGoro'			
     )
     while true; do
         local theme
