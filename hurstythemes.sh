@@ -2525,7 +2525,12 @@ function Slanty_themes() {
 			'RetroHursty69 Slanty_NinjaGaiden'
 			'RetroHursty69 Slanty_Nook'
 			'RetroHursty69 Slanty_Pacman'
-			'RetroHursty69 Slanty_PrincePersia'			
+			'RetroHursty69 Slanty_Pikachu'
+			'RetroHursty69 Slanty_Piranha'			
+			'RetroHursty69 Slanty_PrincePersia'
+			'RetroHursty69 Slanty_Punchout'
+			'RetroHursty69 Slanty_QBert'
+			'RetroHursty69 Slanty_Robotron'			
     )
     while true; do
         local theme
