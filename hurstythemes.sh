@@ -2486,6 +2486,7 @@ function Slanty_themes() {
 			'RetroHursty69 Slanty_Battletoads'
 			'RetroHursty69 Slanty_Bomberman'
 			'RetroHursty69 Slanty_Boogerman'
+			'RetroHursty69 Slanty_BOrchid'
 			'RetroHursty69 Slanty_Bowser'
 			'RetroHursty69 Slanty_BubbleBobble'
 			'RetroHursty69 Slanty_Castlevania'
@@ -2517,7 +2518,14 @@ function Slanty_themes() {
 			'RetroHursty69 Slanty_Mario'
 			'RetroHursty69 Slanty_Megaman'
 			'RetroHursty69 Slanty_Metroid'
-			'RetroHursty69 Slanty_MKGoro'			
+			'RetroHursty69 Slanty_MKGoro'
+			'RetroHursty69 Slanty_MKScorpion'
+			'RetroHursty69 Slanty_MKSubZero'
+			'RetroHursty69 Slanty_Nights'
+			'RetroHursty69 Slanty_NinjaGaiden'
+			'RetroHursty69 Slanty_Nook'
+			'RetroHursty69 Slanty_Pacman'
+			'RetroHursty69 Slanty_PrincePersia'			
     )
     while true; do
         local theme
