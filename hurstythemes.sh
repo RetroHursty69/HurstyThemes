@@ -2530,7 +2530,17 @@ function Slanty_themes() {
 			'RetroHursty69 Slanty_PrincePersia'
 			'RetroHursty69 Slanty_Punchout'
 			'RetroHursty69 Slanty_QBert'
-			'RetroHursty69 Slanty_Robotron'			
+			'RetroHursty69 Slanty_Robotron'
+			'RetroHursty69 Slanty_SackBoy'
+			'RetroHursty69 Slanty_SFBison'
+			'RetroHursty69 Slanty_SFChunLi'
+			'RetroHursty69 Slanty_SFRyu'
+			'RetroHursty69 Slanty_Simpsons'
+			'RetroHursty69 Slanty_Sonic'
+			'RetroHursty69 Slanty_SoR'
+			'RetroHursty69 Slanty_Spiderman'
+			'RetroHursty69 Slanty_SplinterCell'
+			'RetroHursty69 Slanty_SpongeBob'			
     )
     while true; do
         local theme
