@@ -89,7 +89,7 @@ function gui_hurstythemes() {
 		options+=(S "Mario Themes Manager (22 Themes)")
 		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
 		options+=(V "Comic (16:9) Themes Manager (11 Themes)")
-		options+=(Y "Adios (16:9) Themes Manager (TBA Themes)")
+		options+=(Y "Adios (16:9) Themes Manager (10 Themes)")
 		options+=(Z "Slanty (16:9) Themes Manager (77 Themes)")		
 
         local i=1
@@ -107,7 +107,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1401 Themes as at June 2022)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1411 Themes as at June 2022)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -2485,9 +2485,14 @@ function Adios_themes() {
     local themes=(
 			'RetroHursty69 Adios_Akuma'
 			'RetroHursty69 Adios_AlexKidd'
+			'RetroHursty69 Adios_Assassins'			
 			'RetroHursty69 Adios_Axel'
+			'RetroHursty69 Adios_Banjo'			
 			'RetroHursty69 Adios_Billy'
-			'RetroHursty69 Adios_Bison'			
+			'RetroHursty69 Adios_Batman'			
+			'RetroHursty69 Adios_Bison'
+			'RetroHursty69 Adios_BobaFett'
+			'RetroHursty69 Adios_Boo'			
     )
     while true; do
         local theme
