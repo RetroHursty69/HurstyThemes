@@ -76,15 +76,15 @@ function gui_hurstythemes() {
         options+=(F "Mini Sweet Themes Manager (240 Themes)")
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
-        options+=(I "16:9 Aspect Themes Manager (102 Themes)")
-        options+=(J "5:4 Aspect Themes Manager (8 Themes)")
+        options+=(I "16:9 Aspect Themes Manager (110 Themes)")
+        options+=(J "5:4 Aspect Themes Manager (13 Themes)")
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
         options+=(M "Chromey Green Themes Manager (133 Themes)")
         options+=(N "Chromey Neon Themes Manager (134 Themes)")
-        options+=(O "Hursty's Picks Themes Manager (23 Themes)")
+        options+=(O "Hursty's Picks Themes Manager (31 Themes)")
 		options+=(P "Handheld (3:2, 4:3) Themes Manager (11 Themes)")
-		options+=(Q "Slick Themes Manager (29 Themes)")
+		options+=(Q "Slick Themes Manager (30 Themes)")
 		options+=(R "Hyper Themes Manager (177 Themes)")
 		options+=(S "Mario Themes Manager (22 Themes)")
 		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
@@ -106,7 +106,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (Over 1400 Themes as at May 2022)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1401 Themes as at June 2022)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
