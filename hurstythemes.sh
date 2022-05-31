@@ -2484,7 +2484,10 @@ function Comic_themes() {
 function Adios_themes() {
     local themes=(
 			'RetroHursty69 Adios_Akuma'
-			'RetroHursty69 Adios_AlexKidd'	
+			'RetroHursty69 Adios_AlexKidd'
+			'RetroHursty69 Adios_Axel'
+			'RetroHursty69 Adios_Billy'
+			'RetroHursty69 Adios_Bison'			
     )
     while true; do
         local theme
