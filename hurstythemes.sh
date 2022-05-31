@@ -89,6 +89,7 @@ function gui_hurstythemes() {
 		options+=(S "Mario Themes Manager (22 Themes)")
 		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
 		options+=(V "Comic (16:9) Themes Manager (11 Themes)")
+		options+=(Y "Adios (16:9) Themes Manager (TBA Themes)")
 		options+=(Z "Slanty (16:9) Themes Manager (77 Themes)")		
 
         local i=1
@@ -176,7 +177,10 @@ function gui_hurstythemes() {
                 ;;
             V)  #Comic themes
                 Comic_themes
-                ;;	
+                ;;
+            Y)  #Adios themes
+                Adios_themes
+                ;;				
             Z)  #Slanty themes
                 Slanty_themes
                 ;;								
@@ -2423,6 +2427,64 @@ function Comic_themes() {
 			'RetroHursty69 ComicPACMAN'
 			'RetroHursty69 ComicCRASHB'
 			'RetroHursty69 ComicCOVERS'		
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done
+}
+
+function Adios_themes() {
+    local themes=(
+			'RetroHursty69 Adios_Akuma'
+			'RetroHursty69 Adios_AlexKidd'	
     )
     while true; do
         local theme
