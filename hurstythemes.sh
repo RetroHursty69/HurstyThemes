@@ -108,7 +108,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (1436 Hursty Made Themes + All Community Themes)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (1436 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
