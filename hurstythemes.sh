@@ -88,10 +88,10 @@ function gui_hurstythemes() {
 		options+=(R "Hyper Themes Manager (177 Themes)")
 		options+=(S "Mario Themes Manager (22 Themes)")
 		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
-		options+=(U "Comic (16:9) Themes Manager (11 Themes)")
-		options+=(V "Adios (16:9) Themes Manager (30 Themes)")
+		options+=(V "Comic (16:9) Themes Manager (11 Themes)")
+		options+=(W "Adios (16:9) Themes Manager (30 Themes)")
 		options+=(Y "Slanty (16:9) Themes Manager (77 Themes)")
-		options+=(Z "Community Themes Manager (Themes made by community, not just Hursty)")		
+		options+=(Z "Community Themes Manager (Themes by the community, not just Hursty)")		
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -176,10 +176,10 @@ function gui_hurstythemes() {
             T)  #GPi themes
                 GPi_themes
                 ;;
-            U)  #Comic themes
+            V)  #Comic themes
                 Comic_themes
                 ;;
-            V)  #Adios themes
+            W)  #Adios themes
                 Adios_themes
                 ;;				
             Y)  #Slanty themes
