@@ -2483,7 +2483,7 @@ function Comic_themes() {
 
 function Adios_themes() {
     local themes=(
-			'RetroHursty69 Adios_oo7'	
+			'RetroHursty69 Adios_007'	
 			'RetroHursty69 Adios_Akuma'
 			'RetroHursty69 Adios_AlexKidd'
 			'RetroHursty69 Adios_Assassins'			
