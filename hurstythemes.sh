@@ -89,7 +89,7 @@ function gui_hurstythemes() {
 		options+=(S "Mario Themes Manager (22 Themes)")
 		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
 		options+=(V "Comic (16:9) Themes Manager (11 Themes)")
-		options+=(W "Adios (16:9) Themes Manager (35 Themes)")
+		options+=(W "Adios (16:9) Themes Manager (50 Themes)")
 		options+=(Y "Slanty (16:9) Themes Manager (77 Themes)")
 		options+=(Z "Community Themes Manager (Themes by the community, not just Hursty)")		
 
@@ -108,7 +108,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (1436 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (1451 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -2487,7 +2487,8 @@ function Comic_themes() {
 
 function Adios_themes() {
     local themes=(
-			'RetroHursty69 Adios_007'	
+			'RetroHursty69 Adios_007'
+			'RetroHursty69 Adios_Aliens'			
 			'RetroHursty69 Adios_Akuma'
 			'RetroHursty69 Adios_AlexKidd'
 			'RetroHursty69 Adios_Assassins'			
@@ -2514,14 +2515,28 @@ function Adios_themes() {
 			'RetroHursty69 Adios_Drake'
 			'RetroHursty69 Adios_Dragonball'			
 			'RetroHursty69 Adios_DrMario'
+			'RetroHursty69 Adios_DukeNukem'
+			'RetroHursty69 Adios_EarthwormJim'			
 			'RetroHursty69 Adios_Eggman'
+			'RetroHursty69 Adios_Freeman'			
 			'RetroHursty69 Adios_Ganon'			
 			'RetroHursty69 Adios_Gears'
 			'RetroHursty69 Adios_GodofWar'
 			'RetroHursty69 Adios_Ghouls'
 			'RetroHursty69 Adios_Goro'
-			'RetroHursty69 Adios_GTA'			
+			'RetroHursty69 Adios_GTA'
+			'RetroHursty69 Adios_Halo'
+			'RetroHursty69 Adios_Heichi'
+			'RetroHursty69 Adios_Hwoarang'
+			'RetroHursty69 Adios_Invaders'
+			'RetroHursty69 Adios_Jago'
+			'RetroHursty69 Adios_Jak'
+			'RetroHursty69 Adios_Jin'			
 			'RetroHursty69 Adios_JohnnyCage'
+			'RetroHursty69 Adios_Joker'
+			'RetroHursty69 Adios_Ken'
+			'RetroHursty69 Adios_KOF'
+			'RetroHursty69 Adios_Koopa'			
     )
     while true; do
         local theme
