@@ -89,7 +89,7 @@ function gui_hurstythemes() {
 		options+=(S "Mario Themes Manager (22 Themes)")
 		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
 		options+=(V "Comic (16:9) Themes Manager (11 Themes)")
-		options+=(Y "Adios (16:9) Themes Manager (25 Themes)")
+		options+=(Y "Adios (16:9) Themes Manager (30 Themes)")
 		options+=(Z "Slanty (16:9) Themes Manager (77 Themes)")		
 
         local i=1
@@ -107,7 +107,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1426 Themes as at June 2022)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - (1431 Themes as at June 2022)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -2483,25 +2483,30 @@ function Comic_themes() {
 
 function Adios_themes() {
     local themes=(
+			'RetroHursty69 Adios_oo7'	
 			'RetroHursty69 Adios_Akuma'
 			'RetroHursty69 Adios_AlexKidd'
 			'RetroHursty69 Adios_Assassins'			
 			'RetroHursty69 Adios_Axel'
 			'RetroHursty69 Adios_Banjo'			
 			'RetroHursty69 Adios_Billy'
-			'RetroHursty69 Adios_Batman'			
+			'RetroHursty69 Adios_Batman'
+			'RetroHursty69 Adios_Battletoads'			
 			'RetroHursty69 Adios_Bison'
 			'RetroHursty69 Adios_BobaFett'
 			'RetroHursty69 Adios_Boo'
+			'RetroHursty69 Adios_BOrchid'
 			'RetroHursty69 Adios_Bowser'
 			'RetroHursty69 Adios_BowserJr'
 			'RetroHursty69 Adios_C3PO'
 			'RetroHursty69 Adios_ChunLi'
 			'RetroHursty69 Adios_Crash'
+			'RetroHursty69 Adios_DevilMayCry'			
 			'RetroHursty69 Adios_DiddyKong'
 			'RetroHursty69 Adios_DonkeyKong'
 			'RetroHursty69 Adios_DonkeyKongJr'
 			'RetroHursty69 Adios_Doom'
+			'RetroHursty69 Adios_DoubleDragon'			
 			'RetroHursty69 Adios_Drake'
 			'RetroHursty69 Adios_DrMario'
 			'RetroHursty69 Adios_Eggman'
