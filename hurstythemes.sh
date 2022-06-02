@@ -89,7 +89,7 @@ function gui_hurstythemes() {
 		options+=(S "Mario Themes Manager (22 Themes)")
 		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
 		options+=(V "Comic (16:9) Themes Manager (11 Themes)")
-		options+=(W "Adios (16:9) Themes Manager (84 Themes)")
+		options+=(W "Adios (16:9) Themes Manager (99 Themes)")
 		options+=(Y "Slanty (16:9) Themes Manager (77 Themes)")
 		options+=(Z "Community Themes Manager (Themes by the community, not just Hursty)")		
 
@@ -108,7 +108,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (1485 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (1500 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -2528,6 +2528,7 @@ function Adios_themes() {
 			'RetroHursty69 Adios_GTA'
 			'RetroHursty69 Adios_Halo'
 			'RetroHursty69 Adios_Heichi'
+			'RetroHursty69 Adios_Hulk'			
 			'RetroHursty69 Adios_Hwoarang'
 			'RetroHursty69 Adios_Invaders'
 			'RetroHursty69 Adios_Jago'
@@ -2538,6 +2539,20 @@ function Adios_themes() {
 			'RetroHursty69 Adios_Ken'
 			'RetroHursty69 Adios_KOF'
 			'RetroHursty69 Adios_Koopa'
+			'RetroHursty69 Adios_Lara'
+			'RetroHursty69 Adios_Link'
+			'RetroHursty69 Adios_Luigi'
+			'RetroHursty69 Adios_Luke'
+			'RetroHursty69 Adios_Mario'
+			'RetroHursty69 Adios_MarioGolf'
+			'RetroHursty69 Adios_Megaman'
+			'RetroHursty69 Adios_MetalGear'
+			'RetroHursty69 Adios_Monkey'
+			'RetroHursty69 Adios_Nights'
+			'RetroHursty69 Adios_Ninja'
+			'RetroHursty69 Adios_Nook'
+			'RetroHursty69 Adios_Pacman'
+			'RetroHursty69 Adios_Paul'			
 			'RetroHursty69 Adios_Penelope'
 			'RetroHursty69 Adios_PepsiMan'
 			'RetroHursty69 Adios_Predator'
