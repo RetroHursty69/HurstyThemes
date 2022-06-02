@@ -89,7 +89,7 @@ function gui_hurstythemes() {
 		options+=(S "Mario Themes Manager (22 Themes)")
 		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
 		options+=(V "Comic (16:9) Themes Manager (11 Themes)")
-		options+=(W "Adios (16:9) Themes Manager (65 Themes)")
+		options+=(W "Adios (16:9) Themes Manager (84 Themes)")
 		options+=(Y "Slanty (16:9) Themes Manager (77 Themes)")
 		options+=(Z "Community Themes Manager (Themes by the community, not just Hursty)")		
 
@@ -108,7 +108,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (1466 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (1485 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -2515,6 +2515,7 @@ function Adios_themes() {
 			'RetroHursty69 Adios_Drake'
 			'RetroHursty69 Adios_Dragonball'			
 			'RetroHursty69 Adios_DrMario'
+			'RetroHursty69 Adios_DuckHunt'			
 			'RetroHursty69 Adios_DukeNukem'
 			'RetroHursty69 Adios_EarthwormJim'			
 			'RetroHursty69 Adios_Eggman'
@@ -2537,6 +2538,24 @@ function Adios_themes() {
 			'RetroHursty69 Adios_Ken'
 			'RetroHursty69 Adios_KOF'
 			'RetroHursty69 Adios_Koopa'
+			'RetroHursty69 Adios_Penelope'
+			'RetroHursty69 Adios_PepsiMan'
+			'RetroHursty69 Adios_Predator'
+			'RetroHursty69 Adios_Punchout'
+			'RetroHursty69 Adios_Rayman'
+			'RetroHursty69 Adios_ResidentEvil'
+			'RetroHursty69 Adios_Ryu'
+			'RetroHursty69 Adios_SackBoy'
+			'RetroHursty69 Adios_Samurai'
+			'RetroHursty69 Adios_ShyGuy'
+			'RetroHursty69 Adios_Sonic'
+			'RetroHursty69 Adios_Spiderman'
+			'RetroHursty69 Adios_Splatoon'
+			'RetroHursty69 Adios_SplinterCell'
+			'RetroHursty69 Adios_Spock'
+			'RetroHursty69 Adios_StarFox'
+			'RetroHursty69 Adios_Strikers'
+			'RetroHursty69 Adios_Sully'			
 			'RetroHursty69 Adios_Superman'
 			'RetroHursty69 Adios_Tails'
 			'RetroHursty69 Adios_Terminator'
