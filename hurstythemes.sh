@@ -76,8 +76,8 @@ function gui_hurstythemes() {
         options+=(F "Mini Sweet Themes Manager (240 Themes)")
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
-        options+=(I "16:9 Aspect Themes Manager (110 Themes)")
-        options+=(J "5:4 Aspect Themes Manager (13 Themes)")
+        options+=(I "16:9 Aspect Themes Manager (111 Themes)")
+        options+=(J "5:4 Aspect Themes Manager (14 Themes)")
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
         options+=(M "Chromey Green Themes Manager (133 Themes)")
@@ -108,7 +108,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (1500 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (1502 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -994,6 +994,7 @@ function 16x9_themes() {
         'RetroHursty69 orbpilot'
         'RetroHursty69 pacman'
         'RetroHursty69 pitube'
+		'RetroHursty69 PopCom16x9'
         'RetroHursty69 primo'
         'RetroHursty69 primo_light'
         'RetroHursty69 realghostbusters'	
@@ -1082,7 +1083,8 @@ function 16x9_themes() {
 
 function 5x4_themes() {
     local themes=(
-        'RetroHursty69 synthyA1UP'
+        'RetroHursty69 PopCom5x4'
+		'RetroHursty69 synthyA1UP'
 		'RetroHursty69 supersynthyA1UP'
 		'RetroHursty69 Shabang5x4'		
         'RetroHursty69 Card_Decky_5x4'		
