@@ -73,6 +73,7 @@ function gui_hurstythemes() {
         options+=(U "Update install script - script will exit when updated")
         options+=(E "Enable ES bootup theme randomizer")
         options+=(D "Disable ES bootup theme randomizer")
+        options+=(B "ToggleBoxy Themes Manager (200 Themes)")
         options+=(F "Mini Sweet Themes Manager (240 Themes)")
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
@@ -108,7 +109,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (Over 1500 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (Over 1700 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -131,6 +132,9 @@ function gui_hurstythemes() {
             D)  #disable ES bootup theme randomizer
                 disable_script
                 ;;
+            B)  #toggleboxy themes only
+                toggleboxy_themes
+                ;;                
             F)  #mini sweet themes only
                 sweet_themes
                 ;;
@@ -1102,6 +1106,262 @@ function 5x4_themes() {
         'RetroHursty69 Vertical-Limit-A1UP-1024x1280'
 		'RetroHursty69 MK54'
 		'RetroHursty69 BoomBoxStreet4x3'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done
+}
+
+function toggleboxy_themes() {
+    local themes=(
+'RetroHursty69 TB_AddamsFamily'
+'RetroHursty69 TB_AdvanceWars'
+'RetroHursty69 TB_AeroAcrobat'
+'RetroHursty69 TB_AlexKidd' 
+'RetroHursty69 TB_Aliens'
+'RetroHursty69 TB_Aquaman'
+'RetroHursty69 TB_Arcade'
+'RetroHursty69 TB_ArcTheLad'
+'RetroHursty69 TB_ArmyMen'
+'RetroHursty69 TB_Asterix'
+'RetroHursty69 TB_BanjoKazooie'
+'RetroHursty69 TB_Barbie'
+'RetroHursty69 TB_Batman' 
+'RetroHursty69 TB_Battletoads'
+'RetroHursty69 TB_Bayonette'
+'RetroHursty69 TB_BeavisButthead'
+'RetroHursty69 TB_Bejewled'
+'RetroHursty69 TB_Billiards'
+'RetroHursty69 TB_Bomberman' 
+'RetroHursty69 TB_Boogerman'
+'RetroHursty69 TB_Bowser' 
+'RetroHursty69 TB_BTTF'
+'RetroHursty69 TB_BubbleBobble' 
+'RetroHursty69 TB_Bubsy' 
+'RetroHursty69 TB_BuckRogers'
+'RetroHursty69 TB_BueautyBeast'
+'RetroHursty69 TB_BugsBunny'
+'RetroHursty69 TB_CanonFodder'
+'RetroHursty69 TB_Castlevania' 
+'RetroHursty69 TB_ChesterCheetah'
+'RetroHursty69 TB_Conker'
+'RetroHursty69 TB_CoolSpot'
+'RetroHursty69 TB_CrashBandicoot' 
+'RetroHursty69 TB_CrazyTaxi'
+'RetroHursty69 TB_DaffyDuck'
+'RetroHursty69 TB_Darkstalkers' 
+'RetroHursty69 TB_Digimon' 
+'RetroHursty69 TB_DKCountry' 
+'RetroHursty69 TB_DKJunior' 
+'RetroHursty69 TB_DonkeyKong' 
+'RetroHursty69 TB_Dragonball' 
+'RetroHursty69 TB_DragonQuest'
+'RetroHursty69 TB_DragonsLair' 
+'RetroHursty69 TB_DrMario'
+'RetroHursty69 TB_DuckHunt'
+'RetroHursty69 TB_DukeNukem'
+'RetroHursty69 TB_DungeonsDragons'
+'RetroHursty69 TB_EarthwormJim' 
+'RetroHursty69 TB_Easter'
+'RetroHursty69 TB_Ecco'
+'RetroHursty69 TB_FantasticFour'
+'RetroHursty69 TB_FatalFury' 
+'RetroHursty69 TB_FIFA'
+'RetroHursty69 TB_FinalFantasy' 
+'RetroHursty69 TB_FireEmblem'
+'RetroHursty69 TB_Flintstones'
+'RetroHursty69 TB_Frogger' 
+'RetroHursty69 TB_FZero' 
+'RetroHursty69 TB_Galaga' 
+'RetroHursty69 TB_GameAndWatch' 
+'RetroHursty69 TB_Gauntlet' 
+'RetroHursty69 TB_Gex' 
+'RetroHursty69 TB_Ghostbusters'
+'RetroHursty69 TB_GhoulsGhosts' 
+'RetroHursty69 TB_Godzilla'
+'RetroHursty69 TB_GoldenSun'
+'RetroHursty69 TB_Goofy'
+'RetroHursty69 TB_GrimFandango' 
+'RetroHursty69 TB_GTA' 
+'RetroHursty69 TB_GuiltyGear'
+'RetroHursty69 TB_Gundam'
+'RetroHursty69 TB_HalfLife' 
+'RetroHursty69 TB_Halloween'
+'RetroHursty69 TB_Halo' 
+'RetroHursty69 TB_HanSolo'
+'RetroHursty69 TB_HarvestMoon'
+'RetroHursty69 TB_HelloKitty'
+'RetroHursty69 TB_Hockey'
+'RetroHursty69 TB_HomeAlone'
+'RetroHursty69 TB_Hook'
+'RetroHursty69 TB_HotShotsGolf'
+'RetroHursty69 TB_Hulk' 
+'RetroHursty69 TB_HulkHogan'
+'RetroHursty69 TB_IndianaJones'
+'RetroHursty69 TB_IronMan'     
+'RetroHursty69 TB_JamesBond'
+'RetroHursty69 TB_JamesPond'
+'RetroHursty69 TB_JetSetRadio'
+'RetroHursty69 TB_JohnMadden'
+'RetroHursty69 TB_JurassicPark'
+'RetroHursty69 TB_KillerInstinct'
+'RetroHursty69 TB_KingdomHearts'
+'RetroHursty69 TB_KingOfFighters'
+'RetroHursty69 TB_Kirby'
+'RetroHursty69 TB_Krusty'
+'RetroHursty69 TB_Lego'
+'RetroHursty69 TB_Lemmings'
+'RetroHursty69 TB_LionKing'
+'RetroHursty69 TB_LittleBigPlanet' 
+'RetroHursty69 TB_Luigi'
+'RetroHursty69 TB_LuigisMansion'
+'RetroHursty69 TB_Mario1'
+'RetroHursty69 TB_Mario2'
+'RetroHursty69 TB_MarioGolf'
+'RetroHursty69 TB_MarioKart'
+'RetroHursty69 TB_MarioParty'
+'RetroHursty69 TB_MarioStrikers'
+'RetroHursty69 TB_MarioTennis'
+'RetroHursty69 TB_Medievil'
+'RetroHursty69 TB_Megaman'
+'RetroHursty69 TB_MetalGear'
+'RetroHursty69 TB_MetalSlug'
+'RetroHursty69 TB_Metroid'
+'RetroHursty69 TB_MickeyMouse'
+'RetroHursty69 TB_MicroMachines'
+'RetroHursty69 TB_Minecraft'
+'RetroHursty69 TB_MonkeyBall'
+'RetroHursty69 TB_MortalKombat'
+'RetroHursty69 TB_MrDriller'
+'RetroHursty69 TB_MsPacman'   
+'RetroHursty69 TB_Muppets'
+'RetroHursty69 TB_NASCAR'
+'RetroHursty69 TB_NFL'
+'RetroHursty69 TB_Nintendogs'
+'RetroHursty69 TB_Octopath'
+'RetroHursty69 TB_Oddworld'
+'RetroHursty69 TB_Pacman'
+'RetroHursty69 TB_Persona'
+'RetroHursty69 TB_Pikmin'
+'RetroHursty69 TB_Pinball'
+'RetroHursty69 TB_Pitfall'
+'RetroHursty69 TB_PlantsVsZombies'
+'RetroHursty69 TB_PointBlank'
+'RetroHursty69 TB_Pokemon'
+'RetroHursty69 TB_Predator'
+'RetroHursty69 TB_PrinceOfPersia'
+'RetroHursty69 TB_PrincessPeach'
+'RetroHursty69 TB_ProfessorLayton'
+'RetroHursty69 TB_Punchout'
+'RetroHursty69 TB_PuyoPuyo'
+'RetroHursty69 TB_Puzzle'
+'RetroHursty69 TB_PwerRangers'
+'RetroHursty69 TB_QBert'
+'RetroHursty69 TB_Quake'
+'RetroHursty69 TB_Rambo'
+'RetroHursty69 TB_Ratchet'
+'RetroHursty69 TB_Rayman'
+'RetroHursty69 TB_RealGhostbusters'
+'RetroHursty69 TB_ResidentEvil'
+'RetroHursty69 TB_RoadRash'
+'RetroHursty69 TB_Robocop'
+'RetroHursty69 TB_SamuraiShodown'
+'RetroHursty69 TB_Scooby'
+'RetroHursty69 TB_Scribblenauts'
+'RetroHursty69 TB_SecretOfMana'
+'RetroHursty69 TB_Shenmue'
+'RetroHursty69 TB_ShovelKnight'
+'RetroHursty69 TB_Simpsons'
+'RetroHursty69 TB_Sims'
+'RetroHursty69 TB_SmashBros'
+'RetroHursty69 TB_Smurfs'
+'RetroHursty69 TB_SonicModern'
+'RetroHursty69 TB_SonicRetro'
+'RetroHursty69 TB_SoulCalibur'
+'RetroHursty69 TB_SouthPark'
+'RetroHursty69 TB_SpaceChannel5'
+'RetroHursty69 TB_SpaceInvaders'
+'RetroHursty69 TB_SpiderMan'
+'RetroHursty69 TB_Splatoon'
+'RetroHursty69 TB_SplinterCell'
+'RetroHursty69 TB_SpongeBob'
+'RetroHursty69 TB_Spyro'
+'RetroHursty69 TB_Starfox'
+'RetroHursty69 TB_StarTrek'
+'RetroHursty69 TB_StarWars'
+'RetroHursty69 TB_StreetFighter'
+'RetroHursty69 TB_StreetsOfRage'
+'RetroHursty69 TB_Superman'
+'RetroHursty69 TB_Tekken'
+'RetroHursty69 TB_Tennis'
+'RetroHursty69 TB_Tetris'
+'RetroHursty69 TB_TigerWoods'
+'RetroHursty69 TB_TMNT'
+'RetroHursty69 TB_Toad'
+'RetroHursty69 TB_ToeJam'
+'RetroHursty69 TB_TombRaider'
+'RetroHursty69 TB_ToyStory'
+'RetroHursty69 TB_Tron'
+'RetroHursty69 TB_TwistedMetal'
+'RetroHursty69 TB_VirtuaFighter'
+'RetroHursty69 TB_Wario'
+'RetroHursty69 TB_Wonderful101'
+'RetroHursty69 TB_Worms'
+'RetroHursty69 TB_Wrestlemania'
+'RetroHursty69 TB_Xenoblade'
+'RetroHursty69 TB_Xmas'
+'RetroHursty69 TB_XMen'
+'RetroHursty69 TB_Yoda'
+'RetroHursty69 TB_Zelda'
+'RetroHursty69 TB_Zool'
     )
     while true; do
         local theme
