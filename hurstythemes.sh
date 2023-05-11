@@ -1342,6 +1342,7 @@ function toggleboxy_themes() {
 'RetroHursty69 TB_Superman'
 'RetroHursty69 TB_Tekken'
 'RetroHursty69 TB_Tennis'
+'RetroHursty69 TB_Teske'
 'RetroHursty69 TB_Tetris'
 'RetroHursty69 TB_TigerWoods'
 'RetroHursty69 TB_TMNT'
