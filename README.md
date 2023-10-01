@@ -3,7 +3,7 @@
 -------
 OVERVIEW
 
-Hursty's Themes RetroPie Downloader
+Hursty's Themes RetroPie Downloader (as at 2 October 2023, I have released 2000 themes for ES)
 
 Due to the number of themes I have made for Emulation Station, the built-in ES Themes Manager list was becoming very large and cumbersome.  I decided to create my own ES Themes downloader and just list my themes linked directly to my Github repositories.  This allows easier access to my themes for everyone.
 

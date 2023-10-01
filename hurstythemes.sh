@@ -84,15 +84,17 @@ function gui_hurstythemes() {
         options+=(M "Chromey Green Themes Manager (133 Themes)")
         options+=(N "Chromey Neon Themes Manager (134 Themes)")
         options+=(O "Hursty's Picks Themes Manager (31 Themes)")
-		options+=(P "Handheld (3:2, 4:3) Themes Manager (11 Themes)")
-		options+=(Q "Slick Themes Manager (30 Themes)")
-		options+=(R "Hyper Themes Manager (177 Themes)")
-		options+=(S "Mario Themes Manager (22 Themes)")
-		options+=(T "GPi (320x240) Themes Manager (37 Themes)")
-		options+=(V "Comic (16:9) Themes Manager (11 Themes)")
-		options+=(W "Adios (16:9) Themes Manager (99 Themes)")
-		options+=(Y "Slanty (16:9) Themes Manager (77 Themes)")
-		options+=(Z "Community Themes Manager (Themes by the community, not just Hursty)")		
+	options+=(P "Handheld (3:2, 4:3) Themes Manager (11 Themes)")
+	options+=(Q "Slick Themes Manager (30 Themes)")
+	options+=(R "Hyper Themes Manager (177 Themes)")
+	options+=(S "Mario Themes Manager (22 Themes)")
+	options+=(T "GPi (320x240) Themes Manager (37 Themes)")
+	options+=(V "Comic (16:9) Themes Manager (11 Themes)")
+	options+=(W "Adios (16:9) Themes Manager (99 Themes)")
+	options+=(Y "Slanty (16:9) Themes Manager (77 Themes)")
+	options+=(Z "Community Themes Manager (Themes by the community, not Hursty)")		
+	options+=(1 "SmoothyUno (16:9) Themes Manager (153 Themes)")
+	options+=(2 "SmoothyDuo (16:9) Themes Manager (118 Themes)")
 
         local i=1
         for theme in "${themes[@]}"; do
@@ -109,7 +111,7 @@ function gui_hurstythemes() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (Over 1700 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's Theme Installer (2000 ES Themes made by Hursty), also includes all the Community Made Themes (located bottom of the list)" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
@@ -191,6 +193,12 @@ function gui_hurstythemes() {
                 ;;	
             Z)  #Community themes
                 Community_themes
+                ;;					
+            1)  #SmoothyUno
+                SmoothyUno_themes
+                ;;					
+            2)  #SmoothyDuo themes
+                SmoothyDuo_themes
                 ;;					
             *)  #install or update themes
                 theme=(${themes[choice-1]})
@@ -3209,5 +3217,394 @@ function Community_themes() {
         esac
     done
 }
+
+
+function SmoothyUno_themes() {
+    local themes=(
+	'RetroHursty69 007Uno'
+	'RetroHursty69 AceAttorneyUno'
+	'RetroHursty69 AeroAcroBatUno'
+	'RetroHursty69 AladdinUno'
+	'RetroHursty69 AlexKiddUno'
+	'RetroHursty69 AnimalCrossingUno'
+	'RetroHursty69 ArtofFightingUno'
+	'RetroHursty69 AssassinsCreedUno'
+	'RetroHursty69 BarbieUno'
+	'RetroHursty69 BatmanMovieUno'
+	'RetroHursty69 BattletoadsUno'
+	'RetroHursty69 BombermanUno'
+	'RetroHursty69 BoogermanUno'
+	'RetroHursty69 BOrchidUno'
+	'RetroHursty69 BowserUno'
+	'RetroHursty69 CaptainAmericaUno'
+	'RetroHursty69 CasperUno'
+	'RetroHursty69 CoolSpotUno'
+	'RetroHursty69 CrashBandicootUno'
+	'RetroHursty69 DarkstalkersUno'
+	'RetroHursty69 DeadorAliveUno'
+	'RetroHursty69 DiabloUno'
+	'RetroHursty69 DigDugUno'
+	'RetroHursty69 DigimonUno'
+	'RetroHursty69 DonkeyKongUno'
+	'RetroHursty69 DoomUno'
+	'RetroHursty69 DragonBallUno'
+	'RetroHursty69 DrEggmanUno'
+	'RetroHursty69 DrMarioUno'
+	'RetroHursty69 DukeNukemUno'
+	'RetroHursty69 EarthwormJimUno'
+	'RetroHursty69 ElderScrollsUno'
+	'RetroHursty69 FamilyGuyUno'
+	'RetroHursty69 FatalFuryUno'
+	'RetroHursty69 FinalFantasyUno'
+	'RetroHursty69 FireEmblemUno'
+	'RetroHursty69 FroggerUno'
+	'RetroHursty69 FZeroUno'
+	'RetroHursty69 GarfieldUno'
+	'RetroHursty69 GauntletUno'
+	'RetroHursty69 GexUno'
+	'RetroHursty69 GhostbustersUno'
+	'RetroHursty69 GhoulsnGhostsUno'
+	'RetroHursty69 GodofWarUno'
+	'RetroHursty69 GoldenAxeUno'
+	'RetroHursty69 GoldenSunUno'
+	'RetroHursty69 GrimFandangoUno'
+	'RetroHursty69 GTAUno'
+	'RetroHursty69 HarryPotterUno'
+	'RetroHursty69 HarvestMoonUno'
+	'RetroHursty69 HelloKittyUno'
+	'RetroHursty69 HitmanUno'
+	'RetroHursty69 HulkUno'
+	'RetroHursty69 IndianaUno'
+	'RetroHursty69 JakDaxterUno'
+	'RetroHursty69 JetsonsUno'
+	'RetroHursty69 JudgeDreddUno'
+	'RetroHursty69 KingdomHeartsUno'
+	'RetroHursty69 KingofFightersUno'
+	'RetroHursty69 KirbyUno'
+	'RetroHursty69 LegoUno'
+	'RetroHursty69 LemmingsUno'
+	'RetroHursty69 LufiaUno'
+	'RetroHursty69 LuigisMansionUno'
+	'RetroHursty69 LuigiUno'
+	'RetroHursty69 MarioGolfUno'
+	'RetroHursty69 MarioKartUno'
+	'RetroHursty69 MarioTennisUno'
+	'RetroHursty69 MarioUno'
+	'RetroHursty69 MechWarriorUno'
+	'RetroHursty69 MegamanUno'
+	'RetroHursty69 MetalSlugUno'
+	'RetroHursty69 MetroidUno'
+	'RetroHursty69 MickeyMouseUno'
+	'RetroHursty69 MinecraftUno'
+	'RetroHursty69 MK1Uno'
+	'RetroHursty69 MK2Uno'
+	'RetroHursty69 MonkeyBallUno'
+	'RetroHursty69 MsPacmanUno'
+	'RetroHursty69 MuppetsUno'
+	'RetroHursty69 NarutoUno'
+	'RetroHursty69 NinjaGaidenUno'
+	'RetroHursty69 OddworldUno'
+	'RetroHursty69 PacmanJrUno'
+	'RetroHursty69 PacmanUno'
+	'RetroHursty69 PangUno'
+	'RetroHursty69 ParodiusUno'
+	'RetroHursty69 PinballUno'
+	'RetroHursty69 PinkPantherUno'
+	'RetroHursty69 PokemonUno'
+	'RetroHursty69 PopeyeUno'
+	'RetroHursty69 PredatorUno'
+	'RetroHursty69 PrincePersiaUno'
+	'RetroHursty69 PunchoutUno'
+	'RetroHursty69 PunisherUno'
+	'RetroHursty69 PuzzleUno'
+	'RetroHursty69 QBertUno'
+	'RetroHursty69 QuakeUno'
+	'RetroHursty69 RacingUno'
+	'RetroHursty69 RainbowSixUno'
+	'RetroHursty69 RamboUno'
+	'RetroHursty69 RatchetClankUno'
+	'RetroHursty69 RaymanUno'
+	'RetroHursty69 RenStimpyUno'
+	'RetroHursty69 ResidentEvilUno'
+	'RetroHursty69 RoadRunnerUno'
+	'RetroHursty69 RobocopUno'
+	'RetroHursty69 RobotronUno'
+	'RetroHursty69 RugratsUno'
+	'RetroHursty69 SailorMoonUno'
+	'RetroHursty69 SamuraiShoUno'
+	'RetroHursty69 ScoobyDooUno'
+	'RetroHursty69 SF1Uno'
+	'RetroHursty69 SF2Uno'
+	'RetroHursty69 ShiningForceUno'
+	'RetroHursty69 ShinobiUno'
+	'RetroHursty69 ShrekUno'
+	'RetroHursty69 SimpsonsUno'
+	'RetroHursty69 SimsUno'
+	'RetroHursty69 SmurfsUno'
+	'RetroHursty69 SonicOGUno'
+	'RetroHursty69 SonicUno'
+	'RetroHursty69 SouthParkUno'
+	'RetroHursty69 SpaceInvadersUno'
+	'RetroHursty69 SpidermanUno'
+	'RetroHursty69 SplatterhouseUno'
+	'RetroHursty69 SplinterCellUno'
+	'RetroHursty69 SpyroUno'
+	'RetroHursty69 StarfoxUno'
+	'RetroHursty69 StarTrekUno'
+	'RetroHursty69 StarWarsUno'
+	'RetroHursty69 StreetsofRageUno'
+	'RetroHursty69 TamagotchiUno'
+	'RetroHursty69 TekkenUno'
+	'RetroHursty69 TMNTUno'
+	'RetroHursty69 ToadUno'
+	'RetroHursty69 TombRaiderUno'
+	'RetroHursty69 TonyHawkUno'
+	'RetroHursty69 ToyStoryUno'
+	'RetroHursty69 TransformersUno'
+	'RetroHursty69 TronUno'
+	'RetroHursty69 TwistedMetalUno'
+	'RetroHursty69 UnchartedUno'
+	'RetroHursty69 ViewtifulJoeUno'
+	'RetroHursty69 VirtuaFighterUno'
+	'RetroHursty69 WolfensteinUno'
+	'RetroHursty69 WonderBoyUno'
+	'RetroHursty69 WorldHeroesUno'
+	'RetroHursty69 WoverineUno'
+	'RetroHursty69 WWFUno'
+	'RetroHursty69 YoshiUno'
+	'RetroHursty69 Yu-Gi-OhUno'
+	'RetroHursty69 ZeldaUno'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done    
+} 
+
+function SmoothyDuo_themes() {
+    local themes=(
+	'RetroHursty69 AceAttorneyDuo'
+	'RetroHursty69 AeroAcroBatDuo'
+	'RetroHursty69 AladdinDuo'
+	'RetroHursty69 AlexKiddDuo'
+	'RetroHursty69 AnimalCrossingDuo'
+	'RetroHursty69 ArtofFightingDuo'
+	'RetroHursty69 AssassinsCreedDuo'
+	'RetroHursty69 BarbieDuo'
+	'RetroHursty69 BatmanCartoonDuo'
+	'RetroHursty69 BatmanMovieDuo'
+	'RetroHursty69 BattletoadsDuo'
+	'RetroHursty69 BombermanDuo'
+	'RetroHursty69 BoogermanDuo'
+	'RetroHursty69 BowserDuo'
+	'RetroHursty69 CaptAmericaDuo'
+	'RetroHursty69 CasperDuo'
+	'RetroHursty69 CrashBandicootDuo'
+	'RetroHursty69 DarkstalkersDuo'
+	'RetroHursty69 DeadorAliveDuo'
+	'RetroHursty69 DigDugDuo'
+	'RetroHursty69 DigimonDuo'
+	'RetroHursty69 DonkeyKongDuo'
+	'RetroHursty69 DoomDuo'
+	'RetroHursty69 DragonBallDuo'
+	'RetroHursty69 DrEggmanDuo'
+	'RetroHursty69 DrMarioDuo'
+	'RetroHursty69 EarthwormJimDuo'
+	'RetroHursty69 FatalFuryDuo'
+	'RetroHursty69 FinalFantasyDuo'
+	'RetroHursty69 FireEmblemDuo'
+	'RetroHursty69 FroggerDuo'
+	'RetroHursty69 FZeroDuo'
+	'RetroHursty69 GauntletDuo'
+	'RetroHursty69 GhostbustersDuo'
+	'RetroHursty69 GhoulsnGhostsDuo'
+	'RetroHursty69 GodofWarDuo'
+	'RetroHursty69 HitmanDuo'
+	'RetroHursty69 HulkDuo'
+	'RetroHursty69 IndiananDuo'
+	'RetroHursty69 JakDaxterDuo'
+	'RetroHursty69 JudgeDreddDuo'
+	'RetroHursty69 KillerInstinctDuo'
+	'RetroHursty69 KingdomHeartsDuo'
+	'RetroHursty69 KingofFightersDuo'
+	'RetroHursty69 KirbyDuo'
+	'RetroHursty69 LegoDuo'
+	'RetroHursty69 LuigiDuo'
+	'RetroHursty69 LuigisMansionDuo'
+	'RetroHursty69 MarioDuo'
+	'RetroHursty69 MarioGolfDuo'
+	'RetroHursty69 MarioKartDuo'
+	'RetroHursty69 MarioTennisDuo'
+	'RetroHursty69 MegaManDuo'
+	'RetroHursty69 MetalSlugDuo'
+	'RetroHursty69 MetroidDuo'
+	'RetroHursty69 MinecraftDuo'
+	'RetroHursty69 MK1Duo'
+	'RetroHursty69 MK2Duo'
+	'RetroHursty69 MonkeyBallDuo'
+	'RetroHursty69 MsPacmanDuo'
+	'RetroHursty69 NarutoDuo'
+	'RetroHursty69 NinjaGaidenDuo'
+	'RetroHursty69 OddworldDuo'
+	'RetroHursty69 PacmanDuo'
+	'RetroHursty69 ParodiusDuo'
+	'RetroHursty69 PokemonDuo'
+	'RetroHursty69 PopeyeDuo'
+	'RetroHursty69 PrincePersiaDuo'
+	'RetroHursty69 PunchOutDuo'
+	'RetroHursty69 QBertDuo'
+	'RetroHursty69 RatchetClankDuo'
+	'RetroHursty69 RaymanDuo'
+	'RetroHursty69 RenStimpyDuo'
+	'RetroHursty69 ResidentEvilDuo'
+	'RetroHursty69 RoadRunnerDuo'
+	'RetroHursty69 RobocopDuo'
+	'RetroHursty69 RugratsDuo'
+	'RetroHursty69 SailorMoonDuo'
+	'RetroHursty69 SamuraiShodownDuo'
+	'RetroHursty69 ScoobyDooDuo'
+	'RetroHursty69 SF1Duo'
+	'RetroHursty69 SF2Duo'
+	'RetroHursty69 ShiningForceDuo'
+	'RetroHursty69 ShinobiDuo'
+	'RetroHursty69 ShrekDuo'
+	'RetroHursty69 SimpsonsDuo'
+	'RetroHursty69 SimsDuo'
+	'RetroHursty69 SmurfsDuo'
+	'RetroHursty69 SonicDuo'
+	'RetroHursty69 SouthParkDuo'
+	'RetroHursty69 SpaceInvadersDuo'
+	'RetroHursty69 SplatterhouseDuo'
+	'RetroHursty69 SplinterCellDuo'
+	'RetroHursty69 SpyroDuo'
+	'RetroHursty69 StarfoxDuo'
+	'RetroHursty69 StarTrekDuo'
+	'RetroHursty69 StarWarsDuo'
+	'RetroHursty69 StreetsofRageDuo'
+	'RetroHursty69 TamagotchiDuo'
+	'RetroHursty69 TekkenDuo'
+	'RetroHursty69 TMNTDuo'
+	'RetroHursty69 ToadDuo'
+	'RetroHursty69 TombRaiderDuo'
+	'RetroHursty69 ToyStoryDuo'
+	'RetroHursty69 TransformersDuo'
+	'RetroHursty69 TronDuo'
+	'RetroHursty69 TwistedMetalDuo'
+	'RetroHursty69 UnchartedDuo'
+	'RetroHursty69 ViewtifulJoeDuo'
+	'RetroHursty69 VirtuaFighterDuo'
+	'RetroHursty69 WolfensteinDuo'
+	'RetroHursty69 WolverineDuo'
+	'RetroHursty69 WonderBoyDuo'
+	'RetroHursty69 WorldHeroesDuo'
+	'RetroHursty69 WWFDuo'
+	'RetroHursty69 YoshiDuo'
+	'RetroHursty69 Yu-Gi-OhDuo'
+	'RetroHursty69 ZeldaDuo'
+    )
+    while true; do
+        local theme
+        local installed_themes=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_themes+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "Hursty's ES Themes Installer" --menu "Hursty's ES Themes Installer - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/etc/emulationstation/themes/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for theme" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_theme_hurstythemes "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_theme_hurstythemes "$theme"
+                            ;;
+                    esac
+                else
+                    install_theme_hurstythemes "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done    
+} 
+
+
+
+
+
 
 gui_hurstythemes
