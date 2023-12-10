@@ -77,14 +77,14 @@ function gui_hurstythemes() {
         options+=(F "Mini Sweet Themes Manager (240 Themes)")
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
-        options+=(I "16:9 Aspect Themes Manager (117 Themes)")
+        options+=(I "16:9 Aspect Themes Manager (119 Themes)")
         options+=(J "5:4 Aspect Themes Manager (15 Themes)")
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
         options+=(M "Chromey Green Themes Manager (133 Themes)")
         options+=(N "Chromey Neon Themes Manager (134 Themes)")
         options+=(O "Hursty's Picks Themes Manager (31 Themes)")
-	options+=(P "Handheld (3:2, 4:3) Themes Manager (11 Themes)")
+	options+=(P "Handheld (3:2, 4:3) Themes Manager (12 Themes)")
 	options+=(Q "Slick Themes Manager (30 Themes)")
 	options+=(R "Hyper Themes Manager (177 Themes)")
 	options+=(S "Mario Themes Manager (22 Themes)")
@@ -929,6 +929,8 @@ function spin_themes() {
 function 16x9_themes() {
     local themes=(
         'RetroHursty69 2DAI4_Ratio_16-9'
+        'RetroHursty69 AIGEN'
+        'RetroHursty69 AIGEN_PLUS'
         'RetroHursty69 back2basics'
         'RetroHursty69 ballsy'
         'RetroHursty69 batmanburton'
@@ -2141,6 +2143,7 @@ function hurstypicks_themes() {
 
 function handheld_themes() {
     local themes=(
+    'RetroHursty69 AIGEN_PLUS_4x3'
     'RetroHursty69 BlurayGameHat'
 	'RetroHursty69 CarbonGameHat'
 	'RetroHursty69 CardCrazyGameHat'
