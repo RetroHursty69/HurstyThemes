@@ -77,7 +77,7 @@ function gui_hurstythemes() {
         options+=(F "Mini Sweet Themes Manager (240 Themes)")
         options+=(G "Cool Themes Manager (121 Themes)")
         options+=(H "Spin Themes Manager (172 Themes)")
-        options+=(I "16:9 Aspect Themes Manager (119 Themes)")
+        options+=(I "16:9 Aspect Themes Manager (120 Themes)")
         options+=(J "5:4 Aspect Themes Manager (15 Themes)")
         options+=(K "Vertical Aspect Themes Manager (2 Themes)")
         options+=(L "Chromey Blue Themes Manager (133 Themes)")
@@ -930,6 +930,7 @@ function 16x9_themes() {
     local themes=(
         'RetroHursty69 2DAI4_Ratio_16-9'
         'RetroHursty69 AIGEN'
+        'RetroHursty69 AIGEN_EXTRA'
         'RetroHursty69 AIGEN_PLUS'
         'RetroHursty69 back2basics'
         'RetroHursty69 ballsy'
